@@ -11,6 +11,7 @@ html {
 .openingBg {
 	background-color: #171717;
 	background: linear-gradient(0deg, rgba(23, 23, 16, 1) 0%, rgba(0, 0, 0, 1) 100%);
+	height: calc(100vh + 30vh);
 }
 
 .rounded-2xl {
@@ -135,7 +136,7 @@ html {
 
 .bgTexture7:before {
 	content: '';
-	background: linear-gradient(270deg, rgba(1, 0, 14, 1) 0%, rgba(235, 220, 153, 1) 100%);
+	background: linear-gradient(0deg, rgba(1, 0, 14, 1) 80%, rgba(167, 218, 228, 1) 100%);
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -159,13 +160,9 @@ html {
 	top: 25vh;
 }
 
-.relBottomVert {
-	top: 100vh;
-}
-
-.relBottomVert2 {
-	top: 81vh;
-	background: linear-gradient(0deg, rgba(228, 216, 180, 1) 30%, rgba(0, 0, 0, 0) 100%);
+.starsToAtmostphereGrad {
+	top: calc(100vh + 30vh);
+	background: linear-gradient(0deg, rgba(164, 203, 180, 1) 0%, rgba(23, 23, 16, 1) 100%);
 }
 
 /* Blinking Cursor */
@@ -214,5 +211,41 @@ html {
 	}
 	100% {
 		opacity: 0;
+	}
+}
+
+.arrowBob-sm {
+	animation: animArrowBobSm 1.5s ease-in-out infinite;
+}
+
+@keyframes animArrowBobSm {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@media (min-width: 640px) {
+	.sm\:arrowBob {
+		animation: animArrowBob 1.5s ease-in-out infinite;
+	}
+}
+
+@keyframes animArrowBob {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-70px);
+	}
+
+	100% {
+		transform: translateY(0px);
 	}
 }
