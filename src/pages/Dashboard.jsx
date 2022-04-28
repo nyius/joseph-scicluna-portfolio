@@ -59,7 +59,7 @@ function Dashboard() {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		<div className="">
+		<div className="h-screen openingBg">
 			{/* <div className="h-1000 border-8 border-base-content">
 				<div className="typing-container border-8 w-full h-full flex flex-col justify-center items-center border-neutral-focus">
 					<div className="flex flex-row">
@@ -81,7 +81,7 @@ function Dashboard() {
 			<div id="stars2"></div>
 			<div id="stars3"></div>
 			{/* Cartridge */}
-			<div className="grid grid-cols-12 max-w-3xl mt-20 mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-1/2 shadow-xl sticky top-0 left-0">
+			<div className="grid grid-cols-12 max-w-3xl mt-20 mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-1/2 shadow-xl sticky top-0 left-0 cartridgeShadow">
 				<div className="h-6 sm:h-10 col-span-11 rounded-t-xl bgTexture1 border-t-2 sm:border-t-8 border-l-2 sm:border-l-8 border-l-zinc-100/90 border-t-zinc-100/90 border-r-8 border-r-zinc-400/80"></div>
 				<div className="h-fit pb-10 sm:pb-0 sm:h-800 col-span-12 rounded-tr-xl rounded-b-xl bgTexture1 border-l-2 sm:border-l-8 border-l-zinc-100/90 border-r-2 sm:border-r-8 border-b-2 sm:border-b-8 border-r-zinc-400/80 border-b-zinc-400/80">
 					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-3 sm:mt-8 border-t-2 border-t-zinc-100"></div>
@@ -128,34 +128,46 @@ function Dashboard() {
 			</div>
 
 			{/* Handheld Device */}
-			<div className="max-w-7xl mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-3/4 shadow-xl relative relCenterVert main">
-				<div className="rounded-2xl sm:rounded-4xl h-screen w-full p-4 bgTexture2 border-4 sm:border-8 border-l-zinc-100/70 border-t-zinc-100/70 border-r-zinc-400/50 border-b-zinc-400/50">
-					<div className="grid grid-cols-12 justify-center items-center mt-20 h-1000 bg-zinc-900 mx-auto rounded-2xl w-11/12">
-						<div className="col-span-2 h-full flex justify-center items-center">
-							<div className="rounded-full bg-zinc-400 h-8 w-8"></div>
+			<div className="max-w-7xl mt-500 mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-3/4 shadow-xl sticky top-0 left-0 deviceShadowUp z-10">
+				<div className="deviceShadow">
+					<div className="rounded-2xl sm:rounded-4xl bgTexture7 h-screen w-full border-4 sm:border-8 border-l-zinc-100 border-t-zinc-100/70 border-r-zinc-400/50 border-b-zinc-400/50">
+						<div className="w-full grid grid-cols-12 h-20 rounded-t-2xl">
+							<div className="col-start-2 col-span-1 w-3 sm:w-4 h-full bgTexture6 border-l-4 border-l-zinc-800 border-r-4 border-r-zinc-100"></div>
+							<div className="col-start-12 col-span-1 w-3 sm:w-4 h-full bgTexture6 border-l-4 border-l-zinc-800 border-r-4 border-r-zinc-100"></div>
 						</div>
-						<div className="mx-auto col-span-8 rounded-xl text-accent h-11/12 w-full bg-gradient-to-r from-zinc-800 to-zinc-900 p-4 flex flex-col justify-center items-center">
-							<div className="flex flex-row ">
-								<span className="text-8xl font-bold">{letters.intro.word}</span>
-								<span
-									className={`input-cursor ${letters.intro.done ? 'hidden !important' : 'block'} `}
-								/>
+						<div className=" bgTexture6 w-full h-3 sm:h-4 border-t-4 border-t-zinc-800 border-b-4 border-b-zinc-100"></div>
+						<div className="grid grid-cols-12 shadow-xl justify-center bgTexture1 z-20 items-center mt-20 h-1000 bg-zinc-900 mx-auto rounded-2xl w-11/12">
+							<div className="col-span-1 h-full flex justify-center items-center z-20">
+								<div className="rounded-full bg-zinc-400 h-8 w-8"></div>
 							</div>
-							<div className="flex flex-row">
-								<span className="text-6xl font-bold">{letters.name.word}</span>
-								<span
-									className={`input-cursor ${letters.name.done ? 'hidden !important' : 'block'} `}
-								/>
+							<div className="mx-auto col-span-10 rounded-xl z-20 text-accent h-11/12 w-full bg-gradient-to-r from-zinc-800 to-zinc-900 p-4 flex flex-col justify-center items-center">
+								<div className="flex flex-row ">
+									<span className="text-8xl font-bold">{letters.intro.word}</span>
+									<span
+										className={`input-cursor ${
+											letters.intro.done ? 'hidden !important' : 'block'
+										} `}
+									/>
+								</div>
+								<div className="flex flex-row">
+									<span className="text-6xl font-bold">{letters.name.word}</span>
+									<span
+										className={`input-cursor ${letters.name.done ? 'hidden !important' : 'block'} `}
+									/>
+								</div>
+								<div className="flex flex-row">
+									<span className="text-4xl font">{letters.whatIdo.word}</span>
+									<span className={`input-cursor`} />
+								</div>
 							</div>
-							<div className="flex flex-row">
-								<span className="text-4xl font">{letters.whatIdo.word}</span>
-								<span className={`input-cursor`} />
-							</div>
+							<div className="col-start-12 h-full"></div>
 						</div>
-						<div className="col-start-11 h-full"></div>
 					</div>
 				</div>
 			</div>
+
+			<div className="w-full h-96 bg-primary relBottomVert2 absolute left-0"></div>
+			<div className="w-full h-full bg-base-100 relBottomVert left-0 -z-10"></div>
 		</div>
 	);
 }
