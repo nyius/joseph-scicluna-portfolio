@@ -1,5 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+
 function App() {
-	return <div className="App">hello</div>;
+	return (
+		<Router>
+			<div className="mx-auto h-screen bg-in-900 main">
+				<Routes>
+					<Route exact path="/" element={<Dashboard />} />
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
