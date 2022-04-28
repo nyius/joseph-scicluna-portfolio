@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard';
 function App() {
 	return (
 		<Router>
-			<div className="mx-auto h-screen bg-in-900 main">
+			<div className="mx-auto h-screen">
 				<Routes>
 					<Route exact path="/" element={<Dashboard />} />
 				</Routes>

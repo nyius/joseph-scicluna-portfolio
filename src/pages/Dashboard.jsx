@@ -59,7 +59,7 @@ function Dashboard() {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		<div>
+		<div className="">
 			{/* <div className="h-1000 border-8 border-base-content">
 				<div className="typing-container border-8 w-full h-full flex flex-col justify-center items-center border-neutral-focus">
 					<div className="flex flex-row">
@@ -77,55 +77,59 @@ function Dashboard() {
 				</div>
 			</div>
 			<div className="h-screen bg-base-200 w-full">hi</div> */}
-
+			<div id="stars"></div>
+			<div id="stars2"></div>
+			<div id="stars3"></div>
+			{/* Cartridge */}
 			<div className="grid grid-cols-12 max-w-3xl mt-20 mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-1/2 shadow-xl sticky top-0 left-0">
-				<div className="h-10 col-span-11 rounded-t-xl bgTexture1 border-t-8 border-l-8 border-l-zinc-100/90 border-t-zinc-100/90 border-r-8 border-r-zinc-400/80"></div>
-				<div className="h-800 col-span-12 rounded-tr-xl rounded-b-xl bgTexture1 border-l-8 border-l-zinc-100/90 border-r-8 border-b-8 border-r-zinc-400/80 border-b-zinc-400/80">
-					<div className=" bgTexture2 w-full h-3 mt-8 border-t-2 border-t-zinc-100"></div>
-					<div className=" bgTexture2 w-full h-3 mt-3 border-t-2 border-t-zinc-100"></div>
-					<div className=" bgTexture2 w-full h-3 mt-3 border-t-2 border-t-zinc-100"></div>
-					<div className=" bgTexture2 w-full h-3 mt-3 border-t-2 border-t-zinc-100"></div>
-					<div className=" bgTexture2 w-full h-3 mt-3 border-t-2 border-t-zinc-100"></div>
-					<div className="w-3/4 bg-zinc-200 bgTexture2 h-500 grid mx-auto mt-12 rounded-xl border-4 border-l-zinc-400/70 border-t-zinc-400/70 border-r-zinc-100/50 border-b-zinc-100/50">
-						<div className="grid grid-cols-12 justify-center items-center bg-gradient-to-l from-purple-500 to-indigo-500 m-4 rounded-xl relative">
-							<div className="col-span-1 h-full rounded-l-xl bg-zinc-100"></div>
-							<div className="col-span-10 border-4 border-primary-content/60 rounded-xl m-4 text-2xl font-bold ">
-								<div className="w-full h-full bg-secondary/50 border-4 border-accent/60 p-4 rounded-xl flex flex-col gap-4 justify-center ">
-									<p className="pixelFont text-primary-content text-center text-5xl font-bold tracking-widest">
-										JOSEPH SCICLUNA
-									</p>
-									<div className="flex flex-row items-center gap-3 relative px-1">
+				<div className="h-6 sm:h-10 col-span-11 rounded-t-xl bgTexture1 border-t-2 sm:border-t-8 border-l-2 sm:border-l-8 border-l-zinc-100/90 border-t-zinc-100/90 border-r-8 border-r-zinc-400/80"></div>
+				<div className="h-fit pb-10 sm:pb-0 sm:h-800 col-span-12 rounded-tr-xl rounded-b-xl bgTexture1 border-l-2 sm:border-l-8 border-l-zinc-100/90 border-r-2 sm:border-r-8 border-b-2 sm:border-b-8 border-r-zinc-400/80 border-b-zinc-400/80">
+					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-3 sm:mt-8 border-t-2 border-t-zinc-100"></div>
+					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-1 sm:mt-3 border-t-2 border-t-zinc-100"></div>
+					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-1 sm:mt-3 border-t-2 border-t-zinc-100"></div>
+					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-1 sm:mt-3 border-t-2 border-t-zinc-100"></div>
+					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-1 sm:mt-3 border-t-2 border-t-zinc-100"></div>
+					<div className="w-11/12 lg:w-3/4 bgTexture5 shadow-xl h-fit sm:h-500 grid mx-auto mt-5 sm:mt-12 rounded-xl sm:border-4 border-l-zinc-400/70 border-t-zinc-400/70 border-r-zinc-100/50 border-b-zinc-100/50">
+						<div className="grid grid-cols-12 shadow-xl justify-center items-center bg-gradient-to-l from-purple-500 to-indigo-500 m-4 rounded-xl relative bgTexture4">
+							<div className="hidden sm:block col-span-1 h-full rounded-l-xl bgTexture3"></div>
+							<div className="col-span-12 sm:col-span-10 shadow-lg border-4 border-primary-content/60 rounded-xl sm:m-4 font-bold ">
+								<div className="w-full h-full bg-secondary/50 border-4 border-accent/60 p-4 rounded-xl flex flex-col gap-3 justify-center ">
+									<div className="relative">
+										<p className="pixelFont text-primary-content text-center text-2xl md:text-5xl font-bold tracking-widest bg-secondary -skew-y-2 shadow-lg textShadow">
+											JOSEPH SCICLUNA
+										</p>
+									</div>
+									<div className="flex flex-row items-center gap-3 relative px-1 text-lg md:text-2xl">
 										<BsFillPinMapFill className="z-10" />
-										<p className="text-error/60">Elmvale, On</p>
+										<p className="text-primary-content">Elmvale, On</p>
 									</div>
-									<div className="flex flex-row items-center gap-3 relative px-1">
+									<div className="flex flex-row items-center gap-3 relative px-1 text-lg md:text-2xl">
 										<AiFillPhone className="z-10" />
-										<p className="text-error/60">(705)-220-7676</p>
+										<p className="text-primary-content">(705)-220-7676</p>
 									</div>
-									<div className="flex flex-row items-center gap-3 relative px-1">
+									<div className="flex flex-row items-center gap-3 relative px-1 text-lg md:text-2xl">
 										<AiTwotoneMail className="z-10" />
-										<p className="text-error/60">josephdesigned@gmail.com</p>
+										<p className="text-primary-content text-lg xl:text-2xl">
+											josephdesigned@gmail.com
+										</p>
 									</div>
 									<div className="flex flex-row gap-4 w-full justify-between">
-										<HiOutlineBadgeCheck className="h-12 w-12 text-secondary" />
-										<BsBadge4KFill className="h-12 w-12 text-secondary" />
-										<BsBadgeHd className="h-12 w-12 text-secondary" />
-										<DiGithubBadge className="h-12 w-12 text-secondary" />
-									</div>
-									<div className="absolute top-7 right-7 -rotate-12">
-										<img className="h-20 w-20" src={badge} alt="" />
+										<HiOutlineBadgeCheck className="h-6 w-6 md:h-12 md:w-12 text-secondary" />
+										<BsBadge4KFill className="h-6 w-6 md:h-12 md:w-12 text-secondary" />
+										<BsBadgeHd className="h-6 w-6 md:h-12 md:w-12 text-secondary" />
+										<DiGithubBadge className="h-6 w-6 md:h-12 md:w-12 text-secondary cursor-pointer" />
 									</div>
 								</div>
 							</div>
-							<div className="col-start-12 h-full rounded-r-xl bg-zinc-100"></div>
+							<div className="hidden sm:block col-start-12 h-full rounded-r-xl bgTexture3"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			{/* Handheld Device */}
-			<div className="max-w-7xl mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-3/4 shadow-xl relative relCenterVert">
-				<div className="rounded-4xl h-screen w-full p-4 bgTexture2 border-8 border-l-zinc-100/70 border-t-zinc-100/70 border-r-zinc-400/50 border-b-zinc-400/50">
+			<div className="max-w-7xl mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-3/4 shadow-xl relative relCenterVert main">
+				<div className="rounded-2xl sm:rounded-4xl h-screen w-full p-4 bgTexture2 border-4 sm:border-8 border-l-zinc-100/70 border-t-zinc-100/70 border-r-zinc-400/50 border-b-zinc-400/50">
 					<div className="grid grid-cols-12 justify-center items-center mt-20 h-1000 bg-zinc-900 mx-auto rounded-2xl w-11/12">
 						<div className="col-span-2 h-full flex justify-center items-center">
 							<div className="rounded-full bg-zinc-400 h-8 w-8"></div>
