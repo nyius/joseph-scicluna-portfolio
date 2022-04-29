@@ -67,7 +67,7 @@ function Dashboard() {
 			let options = {
 				root: null,
 				rootMargin: '-500px',
-				threshold: 1,
+				threshold: 0.9,
 			};
 
 			let callback = (entries, observer) => {
@@ -150,10 +150,10 @@ function Dashboard() {
 					<div className="rounded-2xl sm:rounded-4xl bgTexture7 h-fit pb-20 sm:pb-0 sm:h-full w-full border-4 sm:border-8 border-l-zinc-100 border-t-zinc-100/70 border-r-zinc-400/50 border-b-zinc-400/50">
 						{/* Lines */}
 						<div className="w-full grid grid-cols-12 h-8 sm:h-20 rounded-t-2xl">
-							<div className="col-start-2 col-span-1 w-3 sm:w-4 h-full bgTexture6 innerShadowLines1 border-r-4 border-r-zinc-100"></div>
-							<div className="col-start-12 col-span-1 w-3 sm:w-4 h-full bgTexture6 innerShadowLines1 border-r-4 border-r-zinc-100"></div>
+							<div className="col-start-2 col-span-1 w-3 sm:w-4 h-full bgTexture6 innerShadowLines1 border-r-1 sm:border-r-4 border-r-zinc-100"></div>
+							<div className="col-start-12 col-span-1 w-3 sm:w-4 h-full bgTexture6 innerShadowLines1 border-r-1 sm:border-r-4 border-r-zinc-100"></div>
 						</div>
-						<div className=" bgTexture6 w-full h-3 sm:h-4 innerShadowLines2 border-b-4 border-b-zinc-100"></div>
+						<div className=" bgTexture6 w-full h-3 sm:h-4 innerShadowLines2 border-b-1 sm:border-b-4 border-b-zinc-100"></div>
 
 						{/* Screen Box */}
 						<div className="grid grid-cols-12 shadow-xl justify-center bgTexture1 z-20 items-center mt-8 sm:mt-20 h-80 sm:h-1000 bg-zinc-900 mx-auto rounded-2xl w-11/12">
