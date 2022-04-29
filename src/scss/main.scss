@@ -10,7 +10,7 @@ html {
 
 .openingBg {
 	background-color: #171717;
-	background: linear-gradient(0deg, rgba(23, 23, 16, 1) 0%, rgba(0, 0, 0, 1) 100%);
+	background: linear-gradient(0deg, rgb(45, 57, 51) 0%, rgba(0, 0, 0, 1) 50%);
 	height: calc(100vh + 30vh);
 }
 
@@ -40,6 +40,12 @@ html {
 
 .h-1000 {
 	height: 1000px;
+}
+
+@media (min-width: 640px) {
+	.sm\:h-1000 {
+		height: 1000px;
+	}
 }
 
 .h-800 {
@@ -161,8 +167,8 @@ html {
 }
 
 .starsToAtmostphereGrad {
-	top: calc(100vh + 30vh);
-	background: linear-gradient(0deg, rgba(164, 203, 180, 1) 0%, rgba(23, 23, 16, 1) 100%);
+	top: calc(100vh + 11vh);
+	// background: linear-gradient(0deg, rgba(164, 203, 180, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Blinking Cursor */
@@ -178,16 +184,27 @@ html {
 
 .cartridgeShadow {
 	box-shadow: 15px 15px #111030;
-	border-radius: 1rem;
+	border-radius: 0 1rem 1rem 1rem;
+}
+
+.cartridgeShadowBottom {
+	box-shadow: 15px 15px #111030;
+	border-radius: 0 0 1rem 1rem;
 }
 
 .deviceShadow {
 	box-shadow: 15px 15px 2px #111030;
 	border-radius: 2rem;
 }
+
 .deviceShadowUp {
 	box-shadow: 0px -20px 20px -20px #111030;
 	border-radius: 2rem;
+}
+
+.powerLED {
+	box-shadow: 0 0 10px 4px #fff, 0 0 40px 10px #dc2828, inset 0 0 10px 0px #fff;
+	transition: 0.1s ease-in-out box-shadow;
 }
 
 .input-cursor {
@@ -211,6 +228,94 @@ html {
 	}
 	100% {
 		opacity: 0;
+	}
+}
+.innerShadowLines1 {
+	box-shadow: inset 2px 0 3px 4px rgba($color: #000000, $alpha: 0.8);
+}
+
+.innerShadowLines2 {
+	box-shadow: inset 0 2px 3px 4px rgba($color: #000000, $alpha: 0.8);
+}
+
+.hoverCartridge:hover {
+	transform: skewY(2deg);
+	transition: transform 0.2s ease-in-out;
+}
+
+.hoverCartridge:not(:hover) {
+	transform: skewY(0deg);
+	transition: transform 0.2s ease-in-out;
+}
+
+.deviceScreenOn {
+	box-shadow: inset 5px 5px 10px 0px #000;
+
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	background-color: #a4cbb4;
+	animation: deviceScreenOnAnim 0.5s ease-in-out;
+}
+
+@media (min-width: 640px) {
+	.sm\:deviceScreenOn {
+		box-shadow: inset 15px 15px 40px 0px #000;
+	}
+}
+
+.deviceScreenOn:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+	background-repeat: repeat;
+	animation: noiseAnim 0.2s infinite;
+	opacity: 0.9;
+	visibility: visible;
+}
+
+@keyframes deviceScreenOnAnim {
+	0% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+	}
+	100% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
+
+@keyframes noiseAnim {
+	0% {
+		transform: translate(0, 0);
+	}
+	10% {
+		transform: translate(-5%, -5%);
+	}
+	20% {
+		transform: translate(-10%, 5%);
+	}
+	30% {
+		transform: translate(5%, -10%);
+	}
+	40% {
+		transform: translate(-5%, 15%);
+	}
+	50% {
+		transform: translate(-10%, 5%);
+	}
+	60% {
+		transform: translate(15%, 0);
+	}
+	70% {
+		transform: translate(0, 10%);
+	}
+	80% {
+		transform: translate(-15%, 0);
+	}
+	90% {
+		transform: translate(10%, 5%);
+	}
+	100% {
+		transform: translate(5%, 0);
 	}
 }
 
