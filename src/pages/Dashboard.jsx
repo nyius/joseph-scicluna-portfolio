@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import { BsBadge4KFill, BsBadgeHd, BsFillPinMapFill } from 'react-icons/bs';
 import { AiFillPhone, AiTwotoneMail } from 'react-icons/ai';
@@ -64,9 +64,14 @@ function Dashboard() {
 
 		// Set up screen observer for typing effect
 		const screenObserver = () => {
+			const hasWindow = typeof window !== 'undefined';
+
+			const windowH = hasWindow ? window.innerHeight : null;
+
+			console.log(`-${Math.floor(0.24 * windowH)}px`);
 			let options = {
 				root: null,
-				rootMargin: '-500px',
+				rootMargin: `0px 0px -${Math.floor(0.24 * windowH)}px 0px`,
 				threshold: 0.9,
 			};
 
@@ -96,7 +101,7 @@ function Dashboard() {
 			<div id="stars2"></div>
 			<div id="stars3"></div>
 			{/* Cartridge */}
-			<div className="grid hoverCartridge grid-cols-12 z-10 max-w-3xl mt-14 sm:mt-44 mx-auto w-10/12 md:w-10/12 lg:w-8/12 xl:w-1/2 shadow-xl sticky top-10 sm:top-32 left-0 ">
+			<div className="grid hoverCartridge grid-cols-12 z-10 max-w-3xl mt-0 sm:mt-44 mx-auto w-10/12 md:w-10/12 lg:w-8/12 xl:w-1/2 shadow-xl sticky top-10 sm:top-32 left-0 ">
 				<div className="h-6 sm:h-10 col-span-11 rounded-t-xl bgTexture1 border-t-2 sm:border-t-8 border-l-2 sm:border-l-8 border-l-zinc-100/90 border-t-zinc-100/90 border-r-8 border-r-zinc-400/80"></div>
 				<div className="h-fit pb-3 sm:pb-10 sm:pb-0 sm:h-800 col-span-12 rounded-tr-xl rounded-b-xl bgTexture1 border-l-2 cartridgeShadow sm:border-l-8 border-l-zinc-100/90 border-r-2 sm:border-r-8 border-b-2 sm:border-b-8 border-r-zinc-400/80 border-b-zinc-400/80">
 					<div className=" bgTexture6 w-full h-2 sm:h-3 mt-3 sm:mt-8 innerShadowLines1 border-t-2 border-t-zinc-100"></div>
