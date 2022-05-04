@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Navbar({ setSlider }) {
 	return (
-		<div class="navbar bg-base-100 absolute top-0 left-0">
+		<div class="navbar bg-base-100 absolute top-0 left-0 z-10">
 			<div className="navbar-start"></div>
 			<div class="navbar-center">
 				<ul class="menu menu-horizontal p-0 pixel-font">

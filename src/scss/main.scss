@@ -218,7 +218,6 @@ html {
 
 //-----------------------------------------------------------
 .right-container {
-	margin-top: 10%;
 	position: relative;
 	overflow: auto;
 	display: flex;
@@ -227,6 +226,7 @@ html {
 	height: 100%;
 
 	&-projects {
+		margin-top: 10%;
 		position: absolute;
 		top: 0;
 		left: 0;
