@@ -2,6 +2,7 @@
 @import '~tailwindcss/components';
 @import '~tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import '_stars';
 
 // COLORS:
@@ -26,7 +27,7 @@
 }
 
 html {
-	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+	font-family: 'Roboto', sans-serif;
 }
 
 .pixel-font {
@@ -63,104 +64,154 @@ html {
 	box-shadow: 0.6rem 0.6rem 0px 0px hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
 }
 
-//-----------------------------------------------------------
-.handheld-container {
-	aspect-ratio: 766/1241;
-	margin-top: 1%;
-	border: 10px solid rgb(82 82 82 / var(--tw-bg-opacity));
-	border-bottom-right-radius: 20%;
-	box-shadow: 0.6rem 0.6rem 0px 0px hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
-	transition: 1s ease-in-out width;
+.left-container {
+	position: relative;
+	display: flex;
 
-	& .screen-container {
-		margin: 8%;
-		width: 90%;
-		height: 50%;
-		border-bottom-right-radius: 20%;
-		padding-top: 10%;
-		padding-bottom: 10%;
-		padding-right: 6%;
-		padding-left: 3%;
-		gap: 2%;
+	&-home {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: 1s ease-in-out top;
+		width: 100%;
+		display: flex;
 
-		& .power-button-container {
-			width: 5%;
-
-			& .power-button-off {
-				height: 6%;
-				aspect-ratio: 1/1;
-				background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-				box-shadow: 0 0 0px 0px hsl(var(--p) / var(--tw-bg-opacity)),
-					inset 0 0 0px 0px rgba($color: red, $alpha: 0);
-
-				transition: 0.2s ease-in-out background-color;
-			}
-
-			& .power-button-on {
-				height: 6%;
-				aspect-ratio: 1/1;
-				background-color: hsl(var(--p) / var(--tw-bg-opacity));
-				box-shadow: 0 0 20px 5px hsl(var(--p) / var(--tw-bg-opacity)),
-					inset 0 0 5px 2px rgba($color: #fff, $alpha: 0.8);
-				transition: 0.2s ease-in-out background-color;
-			}
-		}
-
-		& .screen {
-			width: 100%;
-			padding: 4%;
-			overflow: auto;
-			box-shadow: inset 0.5rem 0.5rem 0 0 rgba($color: #000000, $alpha: 0.5);
-		}
-	}
-
-	& .buttons {
-		& .d-pad {
-			width: 25%;
-			margin-left: 5%;
-		}
-
-		& .ab-buttons {
+		& .avatar {
 			width: 30%;
-			margin-right: 5%;
-			transform: rotate(-25deg);
 
-			& .ab-button {
-				width: 40%;
+			& .selfie {
+				width: 100%;
+			}
+
+			& img {
+				object-fit: contain;
 			}
 		}
 	}
 
-	& .select-buttons {
-		width: 30%;
-		margin-right: 5%;
-		margin-top: 6%;
+	&-projects {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: 1s ease-in-out top;
+		width: 100%;
+		display: flex;
 
-		& .select-button {
-			width: 40%;
-			transform: rotate(-25deg);
-		}
-	}
+		//-----------------------------------------------------------
+		.handheld-container {
+			aspect-ratio: 766/1241;
+			margin-top: 1%;
+			border: 10px solid rgb(82 82 82 / var(--tw-bg-opacity));
+			border-bottom-right-radius: 20%;
+			box-shadow: 0.6rem 0.6rem 0px 0px hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
+			transition: 1s ease-in-out width;
+			display: flex;
+			flex-direction: column;
 
-	& .vents-container {
-		gap: 12%;
-		margin-top: 5%;
-		margin-right: 15%;
-		height: 10%;
-		width: 20%;
-		transform: rotate(-25deg);
+			& .screen-container {
+				margin: 8%;
+				width: 90%;
+				height: 50%;
+				border-bottom-right-radius: 20%;
+				padding-top: 10%;
+				padding-bottom: 10%;
+				padding-right: 6%;
+				padding-left: 3%;
+				gap: 2%;
+				display: flex;
+				flex-direction: row;
 
-		& .vent {
-			width: 8px;
-		}
-	}
+				& .power-led-container {
+					width: 5%;
+					height: 100%;
+					display: flex;
 
-	& .tech-container {
-		margin: 2%;
+					& .power-led-off {
+						height: 6%;
+						aspect-ratio: 1/1;
+						background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 
-		&-name {
-			padding: 1% 3%;
-			margin: 1%;
+						transition: 0.2s ease-in-out background-color;
+					}
+
+					& .power-led-on {
+						height: 6%;
+						aspect-ratio: 1/1;
+						background-color: hsl(var(--pf) / var(--tw-bg-opacity));
+						transition: 0.2s ease-in-out background-color;
+					}
+				}
+
+				& .screen {
+					width: 100%;
+					padding: 5%;
+					overflow: auto;
+					box-shadow: inset 0 0 1rem 0px rgba($color: #000000, $alpha: 0.7);
+				}
+			}
+
+			& .buttons {
+				& .d-pad {
+					width: 25%;
+					margin-left: 5%;
+				}
+
+				& .ab-buttons {
+					width: 30%;
+					margin-right: 5%;
+					transform: rotate(-25deg);
+
+					& .ab-button {
+						width: 40%;
+					}
+				}
+			}
+
+			& .select-buttons {
+				width: 30%;
+				margin-right: 5%;
+				margin-top: 6%;
+
+				& .select-button {
+					width: 40%;
+					transform: rotate(-25deg);
+				}
+			}
+
+			& .vents-container {
+				gap: 12%;
+				margin-top: 5%;
+				margin-right: 15%;
+				height: 10%;
+				width: 20%;
+				transform: rotate(-25deg);
+
+				& .vent {
+					width: 8px;
+				}
+			}
+
+			& .project-description {
+				box-shadow: 0.3rem 0.3rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
+			}
+
+			& .bottom-container {
+				margin-top: 4%;
+
+				& .tech-container {
+					margin: 2%;
+
+					&-name {
+						padding: 1% 3%;
+						margin-top: 5%;
+						box-shadow: 0.2rem 0.2rem 0px 0px rgba($color: #1b1b21, $alpha: 1);
+					}
+				}
+
+				& .link-container {
+					margin: 2%;
+				}
+			}
 		}
 	}
 }
@@ -168,48 +219,83 @@ html {
 //-----------------------------------------------------------
 .right-container {
 	margin-top: 10%;
+	position: relative;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 
-	& .projects-container {
-		padding: 2%;
+	&-projects {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: 1s ease-in-out top;
 
-		& .cartridge-container {
-			width: 80%;
-			aspect-ratio: 1/1.1;
-			margin-top: 4%;
-			cursor: pointer;
+		& .projects-container {
+			padding: 2%;
 
-			& .cartridge {
-				border: 6px solid rgb(82 82 82 / var(--tw-bg-opacity));
-				box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.8);
-				padding-bottom: 2%;
+			& .cartridge-container {
+				width: 80%;
+				aspect-ratio: 1/1.1;
+				margin-top: 4%;
+				cursor: pointer;
 
-				&-lines {
-					margin-top: 5%;
-					height: 5%;
+				& .cartridge {
+					border: 6px solid rgb(82 82 82 / var(--tw-bg-opacity));
+					box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.8);
+					padding-bottom: 2%;
 
-					& .cartridge-line {
-						height: 100%;
-					}
-				}
-
-				&-label {
-					margin: 4%;
-					padding: 2%;
-					width: 90%;
-					aspect-ratio: 1/1;
-					gap: 5%;
-
-					&-project-name {
+					&-lines {
 						margin-top: 5%;
-						padding: 2% 8%;
-						font-size: 0.875rem;
+						height: 5%;
+
+						& .cartridge-line {
+							height: 100%;
+						}
 					}
 
-					&-project-description {
-						// border-radius: 5%;
-						border: 2px #fff;
+					&-label {
+						margin: 4%;
+						padding: 2%;
+						width: 90%;
+						aspect-ratio: 1/1;
+						gap: 5%;
+
+						&-project-name {
+							margin-top: 5%;
+							padding: 2% 8%;
+							font-size: 0.875rem;
+						}
+
+						&-project-description {
+							// border-radius: 5%;
+							border: 2px #fff;
+						}
 					}
 				}
+			}
+		}
+	}
+
+	&-home {
+		position: absolute;
+		top: -1000vh;
+		left: 0;
+		transition: 1s ease-in-out top;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+
+		&-text {
+			display: flex;
+			flex-direction: column;
+			padding: 3%;
+			box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
+
+			& p {
+				margin-top: 3%;
 			}
 		}
 	}
