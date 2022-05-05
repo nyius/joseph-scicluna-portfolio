@@ -9,12 +9,12 @@ function HomeTitle() {
 	return (
 		<>
 			<div className="right-container-home-title w-3/4 bg-base-100 border-4 border-primary-content">
-				<p className="text-4xl pixel-font">Hi!</p>
-				<p className="text-2xl">I'm Joey Scicluna</p>
-				<p className="text-xl">I Do Full-Stack Web Development</p>
+				<p className="text-md lg:text-4xl pixel-font">Hi!</p>
+				<p className="text-md lg:text-2xl">I'm Joey Scicluna</p>
+				<p className="text-md lg:text-xl">I Do Full-Stack Web Development</p>
 			</div>
 			<div className="right-container-home-desc bg-base-100 border-4 border-primary-content">
-				<p className="text-2xl">I mainly work with</p>
+				<p className="text-md lg:text-2xl">I mainly work with</p>
 				<div className="h-fit flex-wrap justify-center items-center right-container-home-desc-tech">
 					{skills.map(skill => {
 						return (
@@ -24,12 +24,12 @@ function HomeTitle() {
 						);
 					})}
 				</div>
-				<div className="flex flex-row justify-center items-center mt-5 text-4xl gap-4">
+				<div className="flex flex-row justify-center items-center mt-5 text-md lg:text-4xl gap-4">
 					<FaReact /> <DiJavascript1 /> <FaNodeJs /> <DiMongodb /> <SiTailwindcss /> <FaSass /> <SiJest />
 				</div>
 			</div>
 			<div className="right-container-home-contact bg-base-100 border-4 border-primary-content">
-				<p className="text-2xl">Want to get in touch?</p>
+				<p className="text-md lg:text-2xl">Want to get in touch?</p>
 				<button className="btn btn-lg btn-primary">Contact me</button>
 			</div>
 		</>
