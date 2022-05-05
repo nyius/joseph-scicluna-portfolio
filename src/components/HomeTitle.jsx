@@ -30,7 +30,7 @@ function HomeTitle() {
 			</div>
 			<div className="right-container-home-contact bg-base-100 border-4 border-primary-content">
 				<p className="text-md lg:text-2xl">Want to get in touch?</p>
-				<button className="btn btn-lg btn-primary">Contact me</button>
+				<button className="btn btn-sm lg:btn-lg btn-primary">Contact me</button>
 			</div>
 		</>
 	);
