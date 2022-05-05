@@ -58,17 +58,30 @@ function Dashboard() {
 		<div className={`flex flex-col lg:flex-row w-full h-screen overflow-hidden`}>
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
-				className={`bg-primary w-full h-full left-side relative ${
+				className={`bg-primary w-full h-1/2 lg:h-full left-side relative ${
 					projectSelected ? `basis-9/12` : `basis-6/12`
-				}`}
+				}  ${slider === 1 ? 'h-full' : ''}`}
 			>
 				<div className="w-full h-screen">
+					{/* StarsBG */}
 					<div id="stars" className=""></div>
 					<div id="stars2" className=""></div>
 					<div id="stars3" className=""></div>
-					<div className={`justify-center h-full w-full left-container ${projectSelected ? `mt-1per` : ``}`}>
+
+					{/* Navbar */}
+					<div className="block lg:hidden">
+						<Navbar projectSelected={projectSelected} setSlider={setSlider} />
+					</div>
+
+					<div
+						className={`justify-center h-full lg:h-full w-full left-container ${
+							projectSelected ? `mt-1per` : ``
+						}`}
+					>
 						{/* HOME */}
-						<HomeLeft slider={slider} />
+						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
+							<HomeLeft slider={slider} />
+						</div>
 
 						{/* PROJECTS */}
 						<ProjectsLeft projectSelected={projectSelected} slider={slider} />
@@ -86,7 +99,9 @@ function Dashboard() {
 					backgroundImage: `url(${SymbolsBg})`,
 				}}
 			>
-				<Navbar setSlider={setSlider} />
+				<div className="hidden lg:block">
+					<Navbar projectSelected={projectSelected} setSlider={setSlider} />
+				</div>
 
 				{loading ? (
 					<div className="w-full h-full flex flex-col justify-center items-center">
@@ -99,12 +114,14 @@ function Dashboard() {
 						<HomeRight slider={slider} />
 
 						{/* PROJECTS */}
-						<ProjectsRight
-							projects={projects}
-							projectSelected={projectSelected}
-							setProjectSelected={setProjectSelected}
-							slider={slider}
-						/>
+						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
+							<ProjectsRight
+								projects={projects}
+								projectSelected={projectSelected}
+								setProjectSelected={setProjectSelected}
+								slider={slider}
+							/>
+						</div>
 					</div>
 				)}
 			</div>

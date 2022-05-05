@@ -10,7 +10,7 @@ function ProjectsLeft({ projectSelected, slider }) {
 	return (
 		<div
 			className="left-container-projects h-fit justify-center"
-			style={slider === 2 ? { top: '0' } : { top: '100vh' }}
+			style={slider === 2 ? { top: '0' } : { top: '150vh' }}
 		>
 			{/* ProjectsLeft */}
 			<div
@@ -30,18 +30,20 @@ function ProjectsLeft({ projectSelected, slider }) {
 					<div className={`h-full ${projectSelected ? 'bg-primary' : `bg-zinc-800`} screen`}>
 						{projectSelected ? (
 							<div className="h-fit w-full">
-								<div className="divider"></div>
-								<p className="text-4xl font-bold text-primary-content text-center pixel-font">
+								<div className={`divider hidden lg:block `}></div>
+								<p className="text-sm lg:text-4xl font-bold text-primary-content text-center pixel-font">
 									{projectSelected.project.name}
 								</p>
-								<div className="divider"></div>
+								<div className="divider hidden lg:block"></div>
 								<p className="project-description text-sm xl:text-2xl text-primary-content text-center mt-5per p-4 bg-secondary border-4 border-primary-content">
 									{projectSelected.project.description}
 								</p>
-								<div className="flex flex-row w-full h-fit bottom-container">
-									<div className="flex flex-col w-1/2 tech-container">
-										<p className="text-xl w-full text-primary-content pixel-font">TECHNOLOGY</p>
-										<div className="flex flex-col w-1/2 h-fit">
+								<div className="flex flex-col lg:flex-row w-full h-fit bottom-container">
+									<div className="flex flex-col w-full lg:w-1/2 tech-container">
+										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font">
+											TECHNOLOGY
+										</p>
+										<div className="flex flex-col w-full lg:w-1/2 h-fit">
 											{projectSelected.project.technology.map((tech, i) => {
 												return (
 													<p
@@ -54,10 +56,12 @@ function ProjectsLeft({ projectSelected, slider }) {
 											})}
 										</div>
 									</div>
-									<div className="flex flex-col h-fit w-1/2 link-container">
-										<p className="text-xl w-full text-primary-content pixel-font">LINK</p>
-										<div className="divider"></div>
-										<button className="btn-lg btn-success hover:bg-accent-focus border-4 border-primary-content">
+									<div className="flex flex-col h-fit w-full lg:w-1/2 link-container">
+										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font">
+											LINK
+										</p>
+										<div className="divider hidden lg:block"></div>
+										<button className="btn-md lg:btn-lg btn-success hover:bg-accent-focus border-4 border-primary-content">
 											<a
 												href={projectSelected.project.link}
 												className="w-1/2 text-center font-bold text-xl"

@@ -3,8 +3,8 @@ import React from 'react';
 function ProjectsRight({ projects, setProjectSelected, projectSelected, slider }) {
 	return (
 		<div
-			className="w-full h-full justify-center items-center right-container-projects"
-			style={slider === 2 ? { top: '0' } : { top: '-100vh' }}
+			className={`w-full h-full justify-center items-center right-container-projects`}
+			style={slider === 2 ? { top: '0' } : { top: '-150vh' }}
 		>
 			<p className="text-center text-ld sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl pixel-font">PROJECTS</p>
 			<div
@@ -36,7 +36,7 @@ function ProjectsRight({ projects, setProjectSelected, projectSelected, slider }
 										background: `url(${project.project.image}) center/cover no-repeat padding-box`,
 									}}
 								>
-									<p className="capitalize cartridge-label-project-name border-2 shadow-lg bg-zinc-100 text-primary-content text-center font-bold pixel-font">
+									<p className="capitalize cartridge-label-project-name border-2 shadow-lg bg-primary text-primary-content text-center font-bold pixel-font">
 										{project.project.name}
 									</p>
 								</div>

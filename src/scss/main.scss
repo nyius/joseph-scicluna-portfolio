@@ -41,6 +41,7 @@ html {
 
 .left-side {
 	transition: 1s ease-in-out flex-basis;
+	transition: 0.5s ease-in-out height;
 	& .mt-5per {
 		margin-top: 5%;
 		transition: 1s ease-in-out margin-top;
@@ -75,6 +76,7 @@ html {
 		transition: 1s ease-in-out top;
 		width: 100%;
 		display: flex;
+		flex-direction: column;
 
 		& .avatar {
 			width: 30%;
@@ -226,7 +228,7 @@ html {
 	height: 100%;
 
 	&-projects {
-		margin-top: 10%;
+		margin-top: 5%;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -245,6 +247,7 @@ html {
 					border: 6px solid rgb(82 82 82 / var(--tw-bg-opacity));
 					box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.8);
 					padding-bottom: 2%;
+					transition: 0.3s ease-in-out transform;
 
 					&-lines {
 						margin-top: 5%;
@@ -263,7 +266,7 @@ html {
 						gap: 5%;
 
 						&-project-name {
-							margin-top: 5%;
+							margin-top: 2%;
 							padding: 2% 8%;
 							font-size: 0.875rem;
 						}
@@ -288,7 +291,7 @@ html {
 		width: 100%;
 		height: 100%;
 
-		&-text {
+		&-title {
 			display: flex;
 			flex-direction: column;
 			padding: 3%;
@@ -296,6 +299,42 @@ html {
 
 			& p {
 				margin-top: 3%;
+			}
+		}
+
+		&-desc {
+			margin-top: 4%;
+			display: flex;
+			flex-direction: column;
+			padding: 2%;
+			box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
+			width: 75%;
+
+			&-tech {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				gap: 2%;
+				margin-top: 3%;
+
+				& p {
+					background-color: hsl(var(--p) / var(--tw-bg-opacity));
+					padding: 2%;
+					margin: 1%;
+					transition: 0.2s ease-in-out transform;
+				}
+			}
+		}
+
+		&-contact {
+			margin-top: 4%;
+			display: flex;
+			flex-direction: column;
+			padding: 2%;
+			box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
+
+			& button {
+				margin-top: 5%;
 			}
 		}
 	}
