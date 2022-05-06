@@ -7,7 +7,7 @@ function Navbar({ setSlider, projectSelected }) {
 		<>
 			{/* Non-mobile navbar */}
 			<div
-				className={`navbar bg-base-100 sticky top-0 left-0 z-10 ${
+				className={`navbar bg-base-100 sticky top-0 left-0 z-50 ${
 					projectSelected ? 'w-fit' : ''
 				} hidden lg:block `}
 			>
@@ -108,7 +108,7 @@ function Navbar({ setSlider, projectSelected }) {
 			</div>
 
 			{/* Mobile navbar */}
-			<div className={`navbar bg-base-100 sticky top-0 left-0 z-10 w-fit block lg:hidden z-40`}>
+			<div className={`navbar bg-base-100 sticky top-0 left-0 w-fit block lg:hidden z-50`}>
 				<div className="navbar-start">
 					<div class={`dropdown`}>
 						<label tabindex="0" class="btn btn-ghost btn-circle">

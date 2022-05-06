@@ -10,6 +10,8 @@ import Spinner from '../components/Spinner';
 import Navbar from '../components/Navbar';
 import ProjectsLeft from './ProjectsLeft';
 import ProjectsRight from './ProjectsRight';
+import ContactRight from './ContactRight';
+import ContactLeft from './ContactLeft';
 import HomeLeft from './HomeLeft';
 import HomeRight from './HomeRight';
 import { auth, db } from '../firebase.config';
@@ -58,9 +60,9 @@ function Dashboard() {
 		<div className={`flex flex-col lg:flex-row w-full h-screen overflow-hidden`}>
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
-				className={`bg-primary w-full h-1/2 lg:h-full left-side relative ${
+				className={`bg-primary z-10 w-full h-1/2 lg:h-full left-side relative ${
 					projectSelected ? `basis-9/12` : `basis-6/12`
-				}  ${slider === 1 ? 'h-full' : ''}`}
+				}  ${slider === 1 || slider === 4 ? 'h-full' : ''}`}
 			>
 				<div className="w-full h-screen">
 					{/* StarsBG */}
@@ -69,7 +71,7 @@ function Dashboard() {
 					<div id="stars3" className=""></div>
 
 					{/* Navbar */}
-					<div className="block lg:hidden">
+					<div className="block lg:hidden z-50">
 						<Navbar projectSelected={projectSelected} setSlider={setSlider} />
 					</div>
 
@@ -84,7 +86,21 @@ function Dashboard() {
 						</div>
 
 						{/* PROJECTS */}
-						<ProjectsLeft projectSelected={projectSelected} slider={slider} />
+						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
+							<ProjectsLeft projectSelected={projectSelected} slider={slider} />
+						</div>
+
+						{/* Contact */}
+						<div className="block lg:hidden">
+							<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
+								<ContactRight slider={slider} />
+							</div>
+						</div>
+						<div className="hidden lg:block">
+							<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
+								<ContactLeft slider={slider} />
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -109,9 +125,11 @@ function Dashboard() {
 						<Spinner />
 					</div>
 				) : (
-					<div className="justify-items-center items-center right-container">
+					<div className="justify-items-center items-center right-container border-t-8 border-secondary-content lg:border-0">
 						{/* HOME */}
-						<HomeRight slider={slider} />
+						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
+							<HomeRight slider={slider} />
+						</div>
 
 						{/* PROJECTS */}
 						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
@@ -121,6 +139,11 @@ function Dashboard() {
 								setProjectSelected={setProjectSelected}
 								slider={slider}
 							/>
+						</div>
+
+						{/* Contact */}
+						<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
+							<ContactRight slider={slider} />
 						</div>
 					</div>
 				)}
