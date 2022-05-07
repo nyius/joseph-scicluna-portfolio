@@ -4,7 +4,7 @@ import { DiJavascript1, DiMongodb } from 'react-icons/di';
 import { SiTailwindcss, SiJest } from 'react-icons/si';
 import { useNavigate } from 'react-router-dom';
 
-function HomeTitle() {
+function HomeTitle({ setSlider }) {
 	const navigate = useNavigate();
 	const skills = [`react`, `Vanilla JS`, `Node.JS`, `MongoDB`, `Express`, `Tailwind`, `DaisyUI`, `SCSS`, `Jest`];
 
@@ -12,7 +12,7 @@ function HomeTitle() {
 		<>
 			<div className="right-container-home-title w-3/4 bg-secondary lg:bg-base-100 border-4 border-primary-content">
 				<p className="text-md lg:text-4xl pixel-font">Hi!</p>
-				<p className="text-md lg:text-2xl">I'm Joey Scicluna</p>
+				<p className="text-md lg:text-3xl">I'm Joey Scicluna</p>
 				<p className="text-md lg:text-xl">I Do Full-Stack Web Development</p>
 			</div>
 			<div className="right-container-home-desc bg-secondary lg:bg-base-100 border-4 border-primary-content">
@@ -37,7 +37,10 @@ function HomeTitle() {
 				<p className="text-md lg:text-2xl">Want to get in touch?</p>
 				<button
 					className="btn btn-sm lg:btn-lg bg-base-100 lg:btn-primary hover:bg-primary text-primary-content"
-					onClick={() => navigate('/#contact')}
+					onClick={() => {
+						setSlider(4);
+						navigate('/#contact');
+					}}
 				>
 					Contact me
 				</button>

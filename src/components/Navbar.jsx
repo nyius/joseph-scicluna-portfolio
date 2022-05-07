@@ -12,26 +12,26 @@ function Navbar({ setSlider, projectSelected }) {
 				} hidden lg:block `}
 			>
 				<div className="navbar-start">
-					<div class={`dropdown ${projectSelected ? 'block' : 'hidden'}`}>
-						<label tabindex="0" class="btn btn-ghost btn-circle">
+					<div className={`dropdown ${projectSelected ? 'block' : 'hidden'}`}>
+						<label tabIndex="0" className="btn btn-ghost btn-circle">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								class="h-5 w-5"
+								className="h-5 w-5"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
 							>
 								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
 									d="M4 6h16M4 12h16M4 18h7"
 								/>
 							</svg>
 						</label>
 						<ul
-							tabindex="0"
-							class="menu menu-compact pixel-font dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+							tabIndex="0"
+							className="menu menu-compact pixel-font dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 						>
 							<li
 								onClick={() => {
@@ -110,26 +110,26 @@ function Navbar({ setSlider, projectSelected }) {
 			{/* Mobile navbar */}
 			<div className={`navbar bg-base-100 sticky top-0 left-0 w-fit block lg:hidden z-50`}>
 				<div className="navbar-start">
-					<div class={`dropdown`}>
-						<label tabindex="0" class="btn btn-ghost btn-circle">
+					<div className={`dropdown`}>
+						<label tabIndex="0" className="btn btn-ghost btn-circle">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								class="h-5 w-5"
+								className="h-5 w-5"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
 							>
 								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
 									d="M4 6h16M4 12h16M4 18h7"
 								/>
 							</svg>
 						</label>
 						<ul
-							tabindex="0"
-							class="menu menu-compact pixel-font dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-40"
+							tabIndex="0"
+							className="menu menu-compact pixel-font dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-40"
 						>
 							<li
 								onClick={() => {

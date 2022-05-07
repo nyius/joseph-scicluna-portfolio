@@ -61,7 +61,7 @@ function Dashboard() {
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
 				className={`bg-primary z-10 w-full h-1/2 lg:h-full left-side relative ${
-					projectSelected ? `basis-9/12` : `basis-6/12`
+					projectSelected ? `basis-8/12` : `basis-6/12`
 				}  ${slider === 1 || slider === 4 ? 'h-full' : ''}`}
 			>
 				<div className="w-full h-screen">
@@ -108,7 +108,7 @@ function Dashboard() {
 			{/* ------------------------------- RIGHT SIDE ------------------------------- */}
 			<div
 				className={`bg-secondary w-full h-full right-side z-10 overflow-hidden relative ${
-					projectSelected ? `basis-3/12` : `basis-6/12`
+					projectSelected ? `basis-4/12` : `basis-6/12`
 				}`}
 				onClick={e => selectProject(e)}
 				style={{
@@ -128,7 +128,7 @@ function Dashboard() {
 					<div className="justify-items-center items-center right-container border-t-8 border-secondary-content lg:border-0">
 						{/* HOME */}
 						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
-							<HomeRight slider={slider} />
+							<HomeRight slider={slider} setSlider={setSlider} />
 						</div>
 
 						{/* PROJECTS */}
