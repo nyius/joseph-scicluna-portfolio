@@ -2,7 +2,7 @@ import React from 'react';
 import Selfie from '../assets/selfie.png';
 import HomeTitle from '../components/HomeTitle';
 
-function HomeLeft({ slider }) {
+function HomeLeft({ slider, setSlider }) {
 	return (
 		<div
 			className="left-container-home h-fit lg:h-full justify-center items-center"
@@ -18,7 +18,7 @@ function HomeLeft({ slider }) {
 			{/* Me Text */}
 			{/* Visible on the left when in mobile view */}
 			<div className="block lg:hidden flex flex-col justify-center items-center text-center">
-				<HomeTitle />
+				<HomeTitle setSlider={setSlider} />
 			</div>
 		</div>
 	);

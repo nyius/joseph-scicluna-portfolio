@@ -82,7 +82,7 @@ function Dashboard() {
 					>
 						{/* HOME */}
 						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
-							<HomeLeft slider={slider} />
+							<HomeLeft slider={slider} setSlider={setSlider} />
 						</div>
 
 						{/* PROJECTS */}
