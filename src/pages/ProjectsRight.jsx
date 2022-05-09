@@ -22,7 +22,7 @@ function ProjectsRight({ projects, setProjectSelected, projectSelected, slider }
 						>
 							<div
 								className={`cartridge w-full h-fit justify-center items-center flex flex-col bg-zinc-100 ${
-									projectSelected.id === project.id ? `skew-y-6` : ``
+									projectSelected.id === project.id ? `skew-y-6 upAndDown` : ``
 								}`}
 							>
 								<div className="grid grid-rows-5 w-full cartridge-lines">

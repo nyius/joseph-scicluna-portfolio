@@ -56,7 +56,7 @@ function Dashboard() {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		// BG
+		// BGw
 		<div className={`flex flex-col lg:flex-row w-full h-screen overflow-hidden`}>
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
@@ -71,8 +71,13 @@ function Dashboard() {
 					<div id="stars3" className=""></div>
 
 					{/* Navbar */}
+					{/* This shows when user is on mobile or small device */}
 					<div className="block lg:hidden z-50">
-						<Navbar projectSelected={projectSelected} setSlider={setSlider} />
+						<Navbar
+							projectSelected={projectSelected}
+							setProjectSelected={setProjectSelected}
+							setSlider={setSlider}
+						/>
 					</div>
 
 					<div
@@ -87,10 +92,15 @@ function Dashboard() {
 
 						{/* PROJECTS */}
 						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
-							<ProjectsLeft projectSelected={projectSelected} slider={slider} />
+							<ProjectsLeft
+								projectSelected={projectSelected}
+								setProjectSelected={setProjectSelected}
+								slider={slider}
+							/>
 						</div>
 
 						{/* Contact */}
+						{/* One is for mobile devices, and one is for larger screen */}
 						<div className="block lg:hidden">
 							<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
 								<ContactRight slider={slider} />
@@ -115,8 +125,14 @@ function Dashboard() {
 					backgroundImage: `url(${SymbolsBg})`,
 				}}
 			>
+				{/* Navbar */}
+				{/* This is hidden if user is on mobile/smaller screen */}
 				<div className="hidden lg:block">
-					<Navbar projectSelected={projectSelected} setSlider={setSlider} />
+					<Navbar
+						projectSelected={projectSelected}
+						setProjectSelected={setProjectSelected}
+						setSlider={setSlider}
+					/>
 				</div>
 
 				{loading ? (

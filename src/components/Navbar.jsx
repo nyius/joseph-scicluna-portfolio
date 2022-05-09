@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Navbar({ setSlider, projectSelected }) {
+function Navbar({ setSlider, projectSelected, setProjectSelected }) {
 	const navigate = useNavigate();
 	return (
 		<>
 			{/* Non-mobile navbar */}
 			<div
-				className={`navbar bg-base-100 sticky top-0 left-0 z-50 ${
+				className={`navbar bg-base-100 fixed top-0 left-0 z-50 ${
 					projectSelected ? 'w-fit' : ''
 				} hidden lg:block `}
 			>
@@ -36,6 +36,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(1);
+									setProjectSelected(false);
 									navigate('/');
 								}}
 							>
@@ -44,6 +45,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(2);
+									setProjectSelected(false);
 									navigate('/#projects');
 								}}
 							>
@@ -52,6 +54,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(3);
+									setProjectSelected(false);
 									navigate('/#resume');
 								}}
 							>
@@ -60,6 +63,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(4);
+									setProjectSelected(false);
 									navigate('/#contact');
 								}}
 							>
@@ -73,6 +77,7 @@ function Navbar({ setSlider, projectSelected }) {
 						<li
 							onClick={() => {
 								setSlider(1);
+								setProjectSelected(false);
 								navigate('/');
 							}}
 						>
@@ -81,6 +86,7 @@ function Navbar({ setSlider, projectSelected }) {
 						<li
 							onClick={() => {
 								setSlider(2);
+								setProjectSelected(false);
 								navigate('/#projects');
 							}}
 						>
@@ -89,6 +95,7 @@ function Navbar({ setSlider, projectSelected }) {
 						<li
 							onClick={() => {
 								setSlider(3);
+								setProjectSelected(false);
 								navigate('/#resume');
 							}}
 						>
@@ -97,6 +104,7 @@ function Navbar({ setSlider, projectSelected }) {
 						<li
 							onClick={() => {
 								setSlider(4);
+								setProjectSelected(false);
 								navigate('/#contact');
 							}}
 						>
@@ -108,7 +116,7 @@ function Navbar({ setSlider, projectSelected }) {
 			</div>
 
 			{/* Mobile navbar */}
-			<div className={`navbar bg-base-100 sticky top-0 left-0 w-fit block lg:hidden z-50`}>
+			<div className={`navbar bg-base-100 fixed top-0 left-0 w-fit block lg:hidden z-50`}>
 				<div className="navbar-start">
 					<div className={`dropdown`}>
 						<label tabIndex="0" className="btn btn-ghost btn-circle">
@@ -134,6 +142,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(1);
+									setProjectSelected(false);
 									navigate('/');
 								}}
 							>
@@ -142,6 +151,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(2);
+									setProjectSelected(false);
 									navigate('/#projects');
 								}}
 							>
@@ -150,6 +160,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(3);
+									setProjectSelected(false);
 									navigate('/#resume');
 								}}
 							>
@@ -158,6 +169,7 @@ function Navbar({ setSlider, projectSelected }) {
 							<li
 								onClick={() => {
 									setSlider(4);
+									setProjectSelected(false);
 									navigate('/#contact');
 								}}
 							>

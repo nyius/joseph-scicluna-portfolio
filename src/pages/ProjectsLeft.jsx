@@ -9,8 +9,8 @@ import Arrow from '../assets/down arrow.png';
 function ProjectsLeft({ projectSelected, slider }) {
 	return (
 		<div
-			className="left-container-projects h-fit justify-center"
-			style={slider === 2 ? { top: '0' } : { top: '150vh' }}
+			className={`left-container-projects h-fit justify-center`}
+			style={slider === 2 ? { top: '10vh' } : { top: '150vh' }}
 		>
 			{/* ProjectsLeft */}
 			<div
@@ -27,7 +27,16 @@ function ProjectsLeft({ projectSelected, slider }) {
 					</div>
 
 					{/* DISPLAY */}
-					<div className={`h-full ${projectSelected ? 'bg-primary' : `bg-zinc-800`} screen`}>
+					<div
+						className={`h-full ${projectSelected ? 'bg-base-100' : `bg-zinc-800`} screen`}
+						style={
+							projectSelected
+								? {
+										backgroundImage: `url("https://www.transparenttextures.com/patterns/dark-circles.png")`,
+								  }
+								: {}
+						}
+					>
 						{projectSelected ? (
 							<div className="h-fit w-full">
 								<div className={`divider hidden lg:block `}></div>
@@ -56,12 +65,14 @@ function ProjectsLeft({ projectSelected, slider }) {
 											})}
 										</div>
 									</div>
+
+									{/* Link */}
 									<div className="flex flex-col h-fit w-full lg:w-1/2 link-container">
 										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font">
-											LINK
+											SEE IT IN ACTION
 										</p>
 										<div className="divider hidden lg:block"></div>
-										<button className="btn-md lg:btn-lg btn-success hover:bg-accent-focus border-4 border-primary-content">
+										<button className="btn-md lg:btn-lg btn-success hover:bg-accent-focus border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
 											<a
 												href={projectSelected.project.link}
 												className="w-1/2 text-center font-bold text-xl"
@@ -72,9 +83,16 @@ function ProjectsLeft({ projectSelected, slider }) {
 										</button>
 									</div>
 								</div>
+								<div className="border-4 border-secondary-content mt-4">
+									<img src={projectSelected.project.image} alt="" />
+								</div>
 							</div>
 						) : (
-							''
+							<div className="h-full w-full pixel-font p-2 text-primary text-sm lg:text-lg">
+								<p className="h-4 w-full">
+									Insert Cartridge to Continue... <span className="blinkLine">|</span>
+								</p>
+							</div>
 						)}
 					</div>
 				</div>

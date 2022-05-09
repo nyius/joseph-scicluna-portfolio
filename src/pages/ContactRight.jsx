@@ -73,9 +73,10 @@ function ContactRight({ slider }) {
 			.catch(err => console.log(err));
 	};
 
+	//---------------------------------------------------------------------------------------------------//
 	return (
 		<div
-			className="right-container-contact h-fit lg:h-full justify-center items-center font-bold"
+			className="right-container-contact h-screen lg:h-full justify-center items-center font-bold"
 			style={slider === 4 ? { top: '0' } : { top: '-150vh' }}
 		>
 			<form
@@ -123,7 +124,7 @@ function ContactRight({ slider }) {
 							onChange={onMutate}
 							required
 						/>
-						<button className="btn btn-accent btn-large mt-5 border-4 border-accent-focus">Submit</button>
+						<button className="btn btn-accent btn-large mt-5 border-accent-focus">Submit</button>
 					</>
 				)}
 			</form>
