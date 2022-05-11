@@ -68,17 +68,25 @@ function ProjectsLeft({ projectSelected, slider }) {
 
 									{/* Link */}
 									<div className="flex flex-col h-fit w-full lg:w-1/2 link-container">
-										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font">
+										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font mb-2">
 											SEE IT IN ACTION
 										</p>
-										<div className="divider hidden lg:block"></div>
-										<button className="btn-md lg:btn-lg btn-success hover:bg-accent-focus border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
+										<button className="btn-md lg:btn-lg btn-success hover:bg-secondary-focus border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
 											<a
 												href={projectSelected.project.link}
 												className="w-1/2 text-center font-bold text-xl"
 												target="_blank"
 											>
 												Visit App
+											</a>
+										</button>
+										<button className="btn-md lg:btn-lg btn-accent border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
+											<a
+												href={projectSelected.project.github}
+												className="w-1/2 text-center font-bold text-xl"
+												target="_blank"
+											>
+												See on Github
 											</a>
 										</button>
 									</div>

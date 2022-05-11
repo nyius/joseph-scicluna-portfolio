@@ -14,6 +14,7 @@ import ContactRight from './ContactRight';
 import ContactLeft from './ContactLeft';
 import HomeLeft from './HomeLeft';
 import HomeRight from './HomeRight';
+import ResumeLeft from './ResumeLeft';
 import { auth, db } from '../firebase.config';
 import { collection, query, getDocs } from 'firebase/firestore';
 
@@ -62,7 +63,7 @@ function Dashboard() {
 			<div
 				className={`bg-primary z-10 w-full h-1/2 lg:h-full left-side relative ${
 					projectSelected ? `basis-8/12` : `basis-6/12`
-				}  ${slider === 1 || slider === 4 ? 'h-full' : ''}`}
+				}  ${slider === 1 || slider === 4 || slider === 3 ? 'h-full' : ''}`}
 			>
 				<div className="w-full h-screen">
 					{/* StarsBG */}
@@ -99,7 +100,12 @@ function Dashboard() {
 							/>
 						</div>
 
-						{/* Contact */}
+						{/* RESUME */}
+						<div className={`${slider !== 3 ? '-z-50' : 'z-30'}`}>
+							<ResumeLeft projectSelected={projectSelected} slider={slider} />
+						</div>
+
+						{/* CONTACT */}
 						{/* One is for mobile devices, and one is for larger screen */}
 						<div className="block lg:hidden">
 							<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>

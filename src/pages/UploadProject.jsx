@@ -13,10 +13,11 @@ function UploadProject() {
 		description: '',
 		technology: [],
 		link: '',
+		github: '',
 		image: {},
 	});
 
-	const { name, description, technology, link, image } = formData;
+	const { name, description, technology, link, image, github } = formData;
 
 	const onSubmit = async e => {
 		e.preventDefault();
@@ -164,6 +165,16 @@ function UploadProject() {
 					type="text"
 					defaultValue={link}
 					placeholder="Enter link to project"
+					className="input input-primary border-4"
+					onChange={onMutate}
+					required
+				/>
+				<label className="text-xl mt-2">Github Link</label>
+				<input
+					id="github"
+					type="text"
+					defaultValue={github}
+					placeholder="Enter link to project on github"
 					className="input input-primary border-4"
 					onChange={onMutate}
 					required

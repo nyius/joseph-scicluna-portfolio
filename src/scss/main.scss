@@ -98,6 +98,7 @@ html {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		margin-top: 10%;
 
 		& .avatar {
 			width: 30%;
@@ -119,6 +120,7 @@ html {
 		transition: 1s ease-in-out top;
 		width: 100%;
 		display: flex;
+		margin-top: 10%;
 
 		//-----------------------------------------------------------
 		.handheld-container {
@@ -170,6 +172,18 @@ html {
 					padding: 5%;
 					overflow: auto;
 					box-shadow: inset 0 0 1rem 0px rgba($color: #000000, $alpha: 0.7);
+				}
+
+				& .screen::-webkit-scrollbar {
+					width: 10px;
+				}
+
+				& .screen::-webkit-scrollbar-track {
+					background-color: hsl(var(--a) / var(--tw-bg-opacity));
+				}
+
+				& .screen::-webkit-scrollbar-thumb {
+					background-color: hsl(var(--af) / var(--tw-bg-opacity));
 				}
 			}
 
@@ -233,12 +247,27 @@ html {
 
 				& .link-container {
 					margin: 2%;
+					& button {
+						margin-bottom: 3%;
+					}
 				}
 			}
 		}
 	}
 
 	&-contact {
+		position: absolute;
+		top: -1000vh;
+		left: 0;
+		transition: 1s ease-in-out top;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		margin-top: 10%;
+	}
+
+	&-resume {
 		position: absolute;
 		top: -1000vh;
 		left: 0;
@@ -323,6 +352,7 @@ html {
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
+		margin-top: 10%;
 
 		&-title {
 			display: flex;
@@ -379,6 +409,7 @@ html {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		margin-top: 10%;
 	}
 }
 
@@ -387,8 +418,16 @@ html {
 		width: 90%;
 	}
 
+	.left-container-projects {
+		margin-top: 0%;
+	}
+
 	.sm-top {
 		top: 0 !important;
+	}
+
+	.screen::-webkit-scrollbar {
+		width: 5px;
 	}
 }
 

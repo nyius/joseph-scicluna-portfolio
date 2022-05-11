@@ -6,7 +6,20 @@ import { useNavigate } from 'react-router-dom';
 
 function HomeTitle({ setSlider }) {
 	const navigate = useNavigate();
-	const skills = [`react`, `Vanilla JS`, `Node.JS`, `MongoDB`, `Express`, `Tailwind`, `DaisyUI`, `SCSS`, `Jest`];
+	const skills = [
+		`react`,
+		`Vanilla JS`,
+		`Node.JS`,
+		`MongoDB`,
+		`Express`,
+		`Dynamic Web Apps`,
+		`Tailwind`,
+		`DaisyUI`,
+		`SCSS`,
+		`Jest`,
+		`Figma`,
+		`Firebase`,
+	];
 
 	return (
 		<>
