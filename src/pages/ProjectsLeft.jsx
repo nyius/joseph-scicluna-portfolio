@@ -10,7 +10,7 @@ function ProjectsLeft({ projectSelected, slider }) {
 	return (
 		<div className={`left-container-projects`} style={slider === 2 ? { top: '10vh' } : { top: '150vh' }}>
 			{/* ProjectsLeft */}
-			<div className="gameboy-container bg-zinc-100" style={{ width: projectSelected ? `98%` : `60%` }}>
+			<div className="gameboy-container bg-zinc-100" style={{ width: projectSelected ? `95%` : `60%` }}>
 				{/* SCREEN CONTAINER */}
 				<div className="bg-zinc-400 screen-container">
 					{/* POWER LED */}
