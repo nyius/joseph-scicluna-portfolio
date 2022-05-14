@@ -1,19 +1,23 @@
 import React from 'react';
 
 function ProjectsRight({ projects, setProjectSelected, projectSelected, slider }) {
+	const sortedProjects = projects.sort((a, b) => (a.project.order < b.project.order ? -1 : 1));
 	return (
 		<div
-			className={`w-full h-full justify-center items-center right-container-projects`}
+			className={`w-full h-full justify-center items-center right-container-projects ${
+				slider === 2 ? 'opacity-100' : 'opacity-0'
+			} `}
 			style={slider === 2 ? { top: '0' } : { top: '-150vh' }}
 		>
 			<p className="text-center text-ld sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl pixel-font">PROJECTS</p>
 			<div
-				className={`w-full h-fit grid ${
-					projectSelected ? `grid-cols-1` : `grid-cols-1 md:grid-cols-2`
-				} justify-items-center items-center projects-container`}
+				className={`w-full h-fit flex flex-wrap justify-center items-center projects-container`}
+				// className={`w-full h-fit grid ${
+				// 	projectSelected ? `grid-cols-1` : `grid-cols-1 md:grid-cols-2`
+				// } justify-items-center items-center projects-container`}
 			>
 				{/* Projects  */}
-				{projects.map(project => {
+				{sortedProjects.map(project => {
 					return (
 						<div
 							className="cartridge-container flex flex-col"

@@ -25,7 +25,7 @@ function HomeTitle({ setSlider }) {
 		<>
 			<div className="right-container-home-title w-3/4 bg-secondary lg:bg-base-100 border-4 border-primary-content">
 				<p className="text-md lg:text-4xl pixel-font">Hi!</p>
-				<p className="text-md lg:text-3xl">I'm Joey Scicluna</p>
+				<p className="text-md lg:text-3xl font-bold">I'm Joey Scicluna</p>
 				<p className="text-md lg:text-xl">I Do Full-Stack Web Development</p>
 			</div>
 			<div className="right-container-home-desc bg-secondary lg:bg-base-100 border-4 border-primary-content">

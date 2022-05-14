@@ -15,6 +15,7 @@ import ContactLeft from './ContactLeft';
 import HomeLeft from './HomeLeft';
 import HomeRight from './HomeRight';
 import ResumeLeft from './ResumeLeft';
+import Stars from '../components/Stars';
 import { auth, db } from '../firebase.config';
 import { collection, query, getDocs } from 'firebase/firestore';
 
@@ -49,6 +50,10 @@ function Dashboard() {
 		fetchProjects();
 	}, []);
 
+	/**
+	 * Handles if a user clicked on a project or not
+	 * @param {*} e
+	 */
 	const selectProject = e => {
 		if (!e.target.className.includes('cartridge')) {
 			setProjectSelected(false);
@@ -61,18 +66,14 @@ function Dashboard() {
 		<div className={`flex flex-col lg:flex-row w-full h-screen overflow-hidden`}>
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
-				className={`bg-primary z-10 w-full h-1/2 lg:h-full left-side relative ${
-					projectSelected ? `basis-8/12` : `basis-6/12`
+				className={`left-side bg-primary h-1/2 lg:h-full ${
+					projectSelected ? 'w-full lg:w-8/12' : 'w-full lg:w-1/2'
 				}  ${slider === 1 || slider === 4 || slider === 3 ? 'h-full' : ''}`}
 			>
 				<div className="w-full h-screen">
-					{/* StarsBG */}
-					<div id="stars" className=""></div>
-					<div id="stars2" className=""></div>
-					<div id="stars3" className=""></div>
+					<Stars />
 
-					{/* Navbar */}
-					{/* This shows when user is on mobile or small device */}
+					{/* Navbar - This shows when user is on mobile or small device  */}
 					<div className="block lg:hidden z-50">
 						<Navbar
 							projectSelected={projectSelected}
@@ -81,11 +82,8 @@ function Dashboard() {
 						/>
 					</div>
 
-					<div
-						className={`justify-center h-full lg:h-full w-full left-container ${
-							projectSelected ? `mt-1per` : ``
-						}`}
-					>
+					{/* Left Container */}
+					<div className={`left-container h-full lg:h-full ${projectSelected ? `mt-1per` : `mt-0per`}`}>
 						{/* HOME */}
 						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
 							<HomeLeft slider={slider} setSlider={setSlider} />
@@ -123,9 +121,7 @@ function Dashboard() {
 
 			{/* ------------------------------- RIGHT SIDE ------------------------------- */}
 			<div
-				className={`bg-secondary w-full h-full right-side z-10 overflow-hidden relative ${
-					projectSelected ? `basis-4/12` : `basis-6/12`
-				}`}
+				className={`right-side bg-secondary ${projectSelected ? `w-full lg:w-4/12` : `w-full lg:w-1/2`}`}
 				onClick={e => selectProject(e)}
 				style={{
 					backgroundImage: `url(${SymbolsBg})`,
@@ -147,7 +143,7 @@ function Dashboard() {
 						<Spinner />
 					</div>
 				) : (
-					<div className="justify-items-center items-center right-container border-t-8 border-secondary-content lg:border-0">
+					<div className="right-container border-t-8 border-secondary-content lg:border-0">
 						{/* HOME */}
 						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
 							<HomeRight slider={slider} setSlider={setSlider} />

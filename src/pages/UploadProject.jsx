@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from '../components/Spinner';
 import { db, auth, storage } from '../firebase.config';
-import { setDoc, serverTimestamp, collection, addDoc } from 'firebase/firestore';
+import { serverTimestamp, collection, addDoc } from 'firebase/firestore';
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
 
 function UploadProject() {
@@ -15,9 +14,10 @@ function UploadProject() {
 		link: '',
 		github: '',
 		image: {},
+		order: 0,
 	});
 
-	const { name, description, technology, link, image, github } = formData;
+	const { name, description, technology, link, image, github, order } = formData;
 
 	const onSubmit = async e => {
 		e.preventDefault();
@@ -175,6 +175,16 @@ function UploadProject() {
 					type="text"
 					defaultValue={github}
 					placeholder="Enter link to project on github"
+					className="input input-primary border-4"
+					onChange={onMutate}
+					required
+				/>
+				<label className="text-xl mt-2">Order</label>
+				<input
+					id="order"
+					type="number"
+					defaultValue={order}
+					placeholder="Enter project order (lower num is more important)"
 					className="input input-primary border-4"
 					onChange={onMutate}
 					required
