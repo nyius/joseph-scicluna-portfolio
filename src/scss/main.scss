@@ -14,6 +14,10 @@
 // ACCENT-FOCUS: hsl(var(--af, var(--a)) / var(--tw-bg-opacity))
 // base-100: #E4D8B4
 
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
 .background-1 {
 	background-color: hsl(var(--p) / var(--tw-bg-opacity));
 }
@@ -24,10 +28,6 @@
 
 .background-3 {
 	background-color: hsl(var(--a) / var(--tw-bg-opacity));
-}
-
-html {
-	font-family: 'Roboto', sans-serif;
 }
 
 .pixel-font {
@@ -61,6 +61,14 @@ html {
 
 .login-container {
 	box-shadow: 0.6rem 0.6rem 0px 0px hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
+}
+
+.down-arrow {
+	position: fixed;
+	top: 90%;
+	right: 2%;
+	width: 3%;
+	transition: 0.2s ease-in-out all;
 }
 
 .left-side {

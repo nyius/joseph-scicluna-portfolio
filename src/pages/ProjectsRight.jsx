@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
+import Arrow from '../assets/down_arrow.png';
 
-function ProjectsRight({ projects, setProjectSelected, projectSelected, slider }) {
+function ProjectsRight({ projects, setProjectSelected, projectSelected, slider, projectsScroll }) {
 	const sortedProjects = projects.sort((a, b) => (a.project.order < b.project.order ? -1 : 1));
+
 	return (
 		<div
 			className={`w-full h-full justify-center items-center right-container-projects ${
@@ -49,6 +51,11 @@ function ProjectsRight({ projects, setProjectSelected, projectSelected, slider }
 					);
 				})}
 			</div>
+			<img
+				src={Arrow}
+				alt="down arrow"
+				className={`down-arrow upAndDown ${projectsScroll ? 'opacity-0' : 'opacity-100'}`}
+			/>
 		</div>
 	);
 }

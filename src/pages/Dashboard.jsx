@@ -20,9 +20,10 @@ import { auth, db } from '../firebase.config';
 import { collection, query, getDocs } from 'firebase/firestore';
 
 function Dashboard() {
-	const [projects, setProjects] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const [projects, setProjects] = useState(null);
 	const [projectSelected, setProjectSelected] = useState(false);
+	const [projectsScroll, setProjectsScroll] = useState(false);
 	const [slider, setSlider] = useState(1);
 
 	// Get projects ---------------------------------------------------------------------------------------------------//
@@ -57,6 +58,18 @@ function Dashboard() {
 	const selectProject = e => {
 		if (!e.target.className.includes('cartridge')) {
 			setProjectSelected(false);
+		}
+	};
+
+	let rightContainer = document.querySelector('.right-container');
+
+	const onScroll = () => {
+		const atBottom =
+			Math.ceil(rightContainer.scrollTop + rightContainer.offsetHeight) === rightContainer.scrollHeight;
+		if (atBottom) {
+			setProjectsScroll(true);
+		} else {
+			setProjectsScroll(false);
 		}
 	};
 
@@ -143,7 +156,10 @@ function Dashboard() {
 						<Spinner />
 					</div>
 				) : (
-					<div className="right-container border-t-8 border-secondary-content lg:border-0">
+					<div
+						className="right-container border-t-8 border-secondary-content lg:border-0"
+						onScroll={onScroll}
+					>
 						{/* HOME */}
 						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
 							<HomeRight slider={slider} setSlider={setSlider} />
@@ -153,6 +169,7 @@ function Dashboard() {
 						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
 							<ProjectsRight
 								projects={projects}
+								projectsScroll={projectsScroll}
 								projectSelected={projectSelected}
 								setProjectSelected={setProjectSelected}
 								slider={slider}
