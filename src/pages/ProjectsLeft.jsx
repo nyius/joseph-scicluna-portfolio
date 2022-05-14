@@ -38,7 +38,7 @@ function ProjectsLeft({ projectSelected, slider }) {
 									{projectSelected.project.name}
 								</p>
 								<div className="divider hidden lg:block"></div>
-								<p className="project-description text-sm xl:text-2xl text-primary-content text-center mt-5per p-4 bg-secondary border-4 border-primary-content">
+								<p className="project-description text-sm xl:text-2xl text-primary-content text-center mt-5per bg-secondary border-4 border-primary-content">
 									{projectSelected.project.description}
 								</p>
 								<div className="flex flex-col lg:flex-row w-full h-fit bottom-container">

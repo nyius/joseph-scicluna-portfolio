@@ -22,8 +22,16 @@ html {
 	background-color: hsl(var(--p) / var(--tw-bg-opacity));
 }
 
+.background-4 {
+	background-color: hsl(var(--pf) / var(--tw-bg-opacity));
+}
+
 .background-2 {
 	background-color: hsl(var(--s) / var(--tw-bg-opacity));
+}
+
+.background-5 {
+	background-color: hsl(var(--sf) / var(--tw-bg-opacity));
 }
 
 .background-3 {
@@ -57,6 +65,10 @@ html {
 
 .dark-box-shadow-06 {
 	box-shadow: 0.6rem 0.6rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
+}
+
+.dark-box-shadow-07 {
+	box-shadow: 0.3rem 0.3rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
 }
 
 .login-container {
@@ -254,6 +266,7 @@ html {
 			& .project-description {
 				box-shadow: 0.3rem 0.3rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
 				transition: 1s ease-in-out all;
+				padding: 2%;
 			}
 
 			& .bottom-container {

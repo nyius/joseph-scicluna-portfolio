@@ -37,12 +37,16 @@ function ProjectsRight({ projects, setProjectSelected, projectSelected, slider, 
 									<div className="cartridge-line row-start-5 w-full bg-zinc-200"></div>
 								</div>
 								<div
-									className={`cartridge-label border-4 border-primary-content bg-base-100 flex flex-col justify-between items-center`}
+									className={`cartridge-label border-4 border-secondary-content bg-base-100 flex flex-col justify-between items-center`}
 									style={{
 										background: `url(${project.project.image}) center/cover no-repeat padding-box`,
 									}}
 								>
-									<p className="capitalize cartridge-label-project-name border-2 shadow-lg bg-primary text-primary-content text-center font-bold pixel-font">
+									<p
+										className={`cartridge-label-project-name -skew-y-3 capitalize border-4 border-secondary-content shadow-lg ${
+											'background-' + Math.ceil(Math.random() * 5)
+										} text-primary-content text-center font-bold pixel-font dark-box-shadow-07`}
+									>
 										{project.project.name}
 									</p>
 								</div>
