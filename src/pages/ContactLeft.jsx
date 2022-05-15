@@ -4,7 +4,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 function ContactLeft({ slider }) {
 	return (
 		<div
-			className="left-container-contact h-fit lg:h-full justify-center items-center"
+			className={`left-container-contact h-fit lg:h-full ${slider !== 4 ? '-z-50' : 'z-30'}`}
 			style={slider === 4 ? { top: '0' } : { top: '150vh' }}
 		>
 			<div className="avatar mb-4 lg:mb-0">

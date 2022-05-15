@@ -61,11 +61,17 @@ function Dashboard() {
 		}
 	};
 
-	let rightContainer = document.querySelector('.right-container');
+	//---------------------------------------------------------------------------------------------------//
+	let rightProjectsContainer = document.querySelector('.right-container');
 
+	/**
+	 * Listens to Scrolling for the projects container
+	 * This is so I can show or hide the down arrow
+	 */
 	const onScroll = () => {
 		const atBottom =
-			Math.ceil(rightContainer.scrollTop + rightContainer.offsetHeight) === rightContainer.scrollHeight;
+			Math.ceil(rightProjectsContainer.scrollTop + rightProjectsContainer.offsetHeight) ===
+			rightProjectsContainer.scrollHeight;
 		if (atBottom) {
 			setProjectsScroll(true);
 		} else {
@@ -75,8 +81,9 @@ function Dashboard() {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		// BGw
 		<div className={`flex flex-col lg:flex-row w-full h-screen overflow-hidden`}>
+			<Navbar projectSelected={projectSelected} setProjectSelected={setProjectSelected} setSlider={setSlider} />
+
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
 				className={`left-side bg-primary h-1/2 lg:h-full ${
@@ -86,47 +93,28 @@ function Dashboard() {
 				<div className="w-full h-screen">
 					<Stars />
 
-					{/* Navbar - This shows when user is on mobile or small device  */}
-					<div className="block lg:hidden z-50">
-						<Navbar
-							projectSelected={projectSelected}
-							setProjectSelected={setProjectSelected}
-							setSlider={setSlider}
-						/>
-					</div>
-
 					{/* Left Container */}
 					<div className={`left-container h-full lg:h-full ${projectSelected ? `mt-1per` : `mt-0per`}`}>
 						{/* HOME */}
-						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
-							<HomeLeft slider={slider} setSlider={setSlider} />
-						</div>
+						<HomeLeft slider={slider} setSlider={setSlider} />
 
 						{/* PROJECTS */}
-						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
-							<ProjectsLeft
-								projectSelected={projectSelected}
-								setProjectSelected={setProjectSelected}
-								slider={slider}
-							/>
-						</div>
+						<ProjectsLeft
+							projectSelected={projectSelected}
+							setProjectSelected={setProjectSelected}
+							slider={slider}
+						/>
 
 						{/* RESUME */}
-						<div className={`${slider !== 3 ? '-z-50' : 'z-30'}`}>
-							<ResumeLeft projectSelected={projectSelected} slider={slider} />
-						</div>
+						<ResumeLeft projectSelected={projectSelected} slider={slider} />
 
 						{/* CONTACT */}
 						{/* One is for mobile devices, and one is for larger screen */}
 						<div className="block lg:hidden">
-							<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
-								<ContactRight slider={slider} />
-							</div>
+							<ContactRight slider={slider} />
 						</div>
 						<div className="hidden lg:block">
-							<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
-								<ContactLeft slider={slider} />
-							</div>
+							<ContactLeft slider={slider} />
 						</div>
 					</div>
 				</div>
@@ -161,25 +149,19 @@ function Dashboard() {
 						onScroll={onScroll}
 					>
 						{/* HOME */}
-						<div className={`${slider !== 1 ? '-z-50' : 'z-30'}`}>
-							<HomeRight slider={slider} setSlider={setSlider} />
-						</div>
+						<HomeRight slider={slider} setSlider={setSlider} />
 
 						{/* PROJECTS */}
-						<div className={`${slider !== 2 ? '-z-50' : 'z-30'}`}>
-							<ProjectsRight
-								projects={projects}
-								projectsScroll={projectsScroll}
-								projectSelected={projectSelected}
-								setProjectSelected={setProjectSelected}
-								slider={slider}
-							/>
-						</div>
+						<ProjectsRight
+							projects={projects}
+							projectsScroll={projectsScroll}
+							projectSelected={projectSelected}
+							setProjectSelected={setProjectSelected}
+							slider={slider}
+						/>
 
 						{/* Contact */}
-						<div className={`${slider !== 4 ? '-z-50' : 'z-30'}`}>
-							<ContactRight slider={slider} />
-						</div>
+						<ContactRight slider={slider} />
 					</div>
 				)}
 			</div>

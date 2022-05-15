@@ -5,7 +5,7 @@ import HomeTitle from '../components/HomeTitle';
 function HomeLeft({ slider, setSlider }) {
 	return (
 		<div
-			className="left-container-home h-screen lg:h-full justify-center items-center"
+			className={`left-container-home h-screen lg:h-full ${slider !== 1 ? '-z-50' : 'z-30'}`}
 			style={slider === 1 ? { top: '0' } : { top: '150vh' }}
 		>
 			{/* Selfie Logo */}

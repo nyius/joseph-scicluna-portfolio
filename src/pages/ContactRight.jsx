@@ -76,7 +76,7 @@ function ContactRight({ slider }) {
 	//---------------------------------------------------------------------------------------------------//
 	return (
 		<div
-			className="right-container-contact h-screen lg:h-full justify-center items-center font-bold"
+			className={`right-container-contact h-screen lg:h-full ${slider !== 4 ? '-z-50' : 'z-30'}`}
 			style={slider === 4 ? { top: '0' } : { top: '-150vh' }}
 		>
 			<form

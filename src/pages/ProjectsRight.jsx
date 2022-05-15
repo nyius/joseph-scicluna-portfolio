@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import Arrow from '../assets/down_arrow.png';
 
 function ProjectsRight({ projects, setProjectSelected, projectSelected, slider, projectsScroll }) {
@@ -6,18 +6,11 @@ function ProjectsRight({ projects, setProjectSelected, projectSelected, slider, 
 
 	return (
 		<div
-			className={`w-full h-full justify-center items-center right-container-projects ${
-				slider === 2 ? 'opacity-100' : 'opacity-0'
-			} `}
+			className={`right-container-projects ${slider === 2 ? 'opacity-100' : 'opacity-0'} `}
 			style={slider === 2 ? { top: '0' } : { top: '-150vh' }}
 		>
-			<p className="text-center text-ld sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl pixel-font">PROJECTS</p>
-			<div
-				className={`w-full h-fit flex flex-wrap justify-center items-center projects-container`}
-				// className={`w-full h-fit grid ${
-				// 	projectSelected ? `grid-cols-1` : `grid-cols-1 md:grid-cols-2`
-				// } justify-items-center items-center projects-container`}
-			>
+			<p className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl pixel-font">PROJECTS</p>
+			<div className={`projects-container`}>
 				{/* Projects  */}
 				{sortedProjects.map(project => {
 					return (

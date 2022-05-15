@@ -8,7 +8,10 @@ import Arrow from '../assets/down arrow.png';
 
 function ProjectsLeft({ projectSelected, slider }) {
 	return (
-		<div className={`left-container-projects`} style={slider === 2 ? { top: '10vh' } : { top: '150vh' }}>
+		<div
+			className={`left-container-projects ${slider !== 2 ? '-z-50' : 'z-30'}`}
+			style={slider === 2 ? { top: '10vh' } : { top: '150vh' }}
+		>
 			{/* ProjectsLeft */}
 			<div className="gameboy-container bg-zinc-100" style={{ width: projectSelected ? `95%` : `60%` }}>
 				{/* SCREEN CONTAINER */}
