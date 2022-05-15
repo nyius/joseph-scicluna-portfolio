@@ -80,7 +80,7 @@ function Dashboard() {
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
 				className={`left-side bg-primary h-1/2 lg:h-full ${
-					projectSelected ? 'w-full lg:w-8/12' : 'w-full lg:w-1/2'
+					projectSelected ? 'w-full lg:w-8/12 h-3/4 lg:h-full' : 'w-full lg:w-1/2'
 				}  ${slider === 1 || slider === 4 || slider === 3 ? 'h-full' : ''}`}
 			>
 				<div className="w-full h-screen">

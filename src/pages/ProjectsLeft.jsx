@@ -34,19 +34,19 @@ function ProjectsLeft({ projectSelected, slider }) {
 						{projectSelected ? (
 							<div className="h-fit w-full">
 								<div className={`divider hidden lg:block `}></div>
-								<p className="text-sm lg:text-4xl font-bold text-primary-content text-center pixel-font">
+								<p className="text-sm lg:text-4xl font-bold text-secondary-content text-center pixel-font ">
 									{projectSelected.project.name}
 								</p>
 								<div className="divider hidden lg:block"></div>
-								<p className="project-description text-sm xl:text-2xl text-primary-content text-center mt-5per bg-secondary border-4 border-primary-content">
+								<p className="project-description text-sm xl:text-2xl text-secondary-content text-center mt-5per bg-secondary border-4 border-primary-content">
 									{projectSelected.project.description}
 								</p>
 								<div className="flex flex-col lg:flex-row w-full h-fit bottom-container">
 									<div className="flex flex-col w-full lg:w-1/2 tech-container">
-										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font">
+										<p className="text-sm lg:text-xl w-full text-secondaru-content pixel-font">
 											TECHNOLOGY
 										</p>
-										<div className="flex flex-col w-full lg:w-1/2 h-fit">
+										<div className="flex flex-col w-full lg:w-3/4 h-fit">
 											{projectSelected.project.technology.map((tech, i) => {
 												return (
 													<p
@@ -62,31 +62,33 @@ function ProjectsLeft({ projectSelected, slider }) {
 
 									{/* Link */}
 									<div className="flex flex-col h-fit w-full lg:w-1/2 link-container">
-										<p className="text-sm lg:text-xl w-full text-primary-content pixel-font mb-2">
+										<p className="text-sm lg:text-xl w-full text-secondary-content pixel-font mb-2">
 											SEE IT IN ACTION
 										</p>
-										<button className="btn-md lg:btn-lg btn-success hover:bg-secondary-focus border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
-											<a
-												href={projectSelected.project.link}
-												className="w-1/2 text-center font-bold text-xl"
-												target="_blank"
-											>
+										<a
+											href={projectSelected.project.link}
+											className="w-full text-center font-bold text-xl"
+											target="_blank"
+										>
+											<button className="btn btn-md lg:btn-lg w-full btn-success hover:bg-secondary-focus border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
 												Visit App
-											</a>
-										</button>
-										<button className="btn-md lg:btn-lg btn-accent border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
-											<a
-												href={projectSelected.project.github}
-												className="w-1/2 text-center font-bold text-xl"
-												target="_blank"
-											>
+											</button>
+										</a>
+										<a
+											href={projectSelected.project.github}
+											className="w-full text-center font-bold text-xl"
+											target="_blank"
+										>
+											<button className="btn btn-md lg:btn-lg w-full btn-accent border-4 border-primary-content hover:border-primary-content dark-box-shadow-03">
 												See on Github
-											</a>
-										</button>
+											</button>
+										</a>
 									</div>
 								</div>
 								<div className="border-4 border-secondary-content mt-4">
-									<img src={projectSelected.project.image} alt="" />
+									<a href={projectSelected.project.link} target="_blank">
+										<img src={projectSelected.project.image} alt={projectSelected.project.name} />
+									</a>
 								</div>
 							</div>
 						) : (

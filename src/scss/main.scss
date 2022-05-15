@@ -475,11 +475,16 @@ html {
 
 @media (max-width: 768px) {
 	.gameboy-container {
+		border: 5px solid rgb(82 82 82 / var(--tw-bg-opacity));
 		width: 90% !important;
 	}
 
 	.left-container-projects {
 		margin-top: 0%;
+	}
+
+	.right-container-projects {
+		margin-top: 10%;
 	}
 
 	.sm-top {
