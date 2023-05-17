@@ -3,6 +3,7 @@ import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import PrivateRoute from './components/PrivateRoute';
 import UploadProject from './pages/UploadProject';
+import CantFind from './pages/CantFind';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 							</PrivateRoute>
 						}
 					/>
+					<Route path="*" element={<CantFind />} />
 				</Routes>
 			</div>
 		</Router>

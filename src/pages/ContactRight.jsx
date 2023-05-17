@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Me from '../assets/me.jpg';
 
 const FORM_ENDPOINT = 'https://public.herotofu.com/v1/73f65690-ce42-11ec-a821-6590c8b23a22';
 
@@ -75,17 +76,17 @@ function ContactRight({ slider }) {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		<div
-			className={`right-container-contact h-screen lg:h-full ${slider !== 4 ? '-z-50' : 'z-30'}`}
-			style={slider === 4 ? { top: '0' } : { top: '-150vh' }}
-		>
-			<form
-				action={FORM_ENDPOINT}
-				className="flex flex-col bg-secondary h-fit w-11/12 sm:w-3/4 md:1/2 lg:w-3/4 xl:w-1/2 p-5 border-4 border-primary-content"
-				onSubmit={e => onSubmit(e)}
-				method="POST"
-				target="_blank"
-			>
+		<div className={`right-container-contact h-screen lg:h-full ${slider !== 4 ? '-z-50' : 'z-30'}`} style={slider === 4 ? { top: '0' } : { top: '-150vh' }}>
+			<div className="items-center flex flex-col sm:flex-row gap-5 p-4 mb-4 w-11/12 sm:w-3/4 md:1/2 lg:w-3/4 xl:w-1/2 bg-secondary border-4 border-solid border-primary-content">
+				<img src={Me} alt="Me" className="rounded-xl dark-box-shadow-03 mb-4 w-28" />
+				<div className="flex flex-col pixel-font gap-3 text-sm justify-center">
+					<p>Joseph Scicluna</p>
+					<p>Elmvale, On, Canada</p>
+					<p>1 705 220-7676</p>
+				</div>
+			</div>
+
+			<form action={FORM_ENDPOINT} className="flex flex-col bg-secondary h-fit w-11/12 sm:w-3/4 md:1/2 lg:w-3/4 xl:w-1/2 p-5 border-4 border-primary-content" onSubmit={e => onSubmit(e)} method="POST" target="_blank">
 				{submitted ? (
 					<div className="flex flex-col bg-secondary h-fit w-full text-center gap-4">
 						<p className="text-4xl pixel-font">Thanks!</p>
@@ -95,35 +96,11 @@ function ContactRight({ slider }) {
 					<>
 						<p className="text-2xl text-center pixel-font">Contact</p>
 						<label className="text-xl mt-2">Name</label>
-						<input
-							id="name"
-							defaultValue={name}
-							type="text"
-							placeholder="Enter your name"
-							className="input input-primary border-4"
-							onChange={onMutate}
-							required
-						/>
+						<input id="name" defaultValue={name} type="text" placeholder="Enter your name" className="input input-primary border-4" onChange={onMutate} required />
 						<label className="text-xl mt-2">Email</label>
-						<input
-							id="email"
-							defaultValue={email}
-							type="email"
-							placeholder="Enter your email"
-							className="input input-primary border-4"
-							onChange={onMutate}
-							required
-						/>
+						<input id="email" defaultValue={email} type="email" placeholder="Enter your email" className="input input-primary border-4" onChange={onMutate} required />
 						<label className="text-xl mt-4">Comment/Question</label>
-						<textarea
-							type="text"
-							defaultValue={message}
-							placeholder="Enter comment/question"
-							className="input input-primary border-4 h-32"
-							id="message"
-							onChange={onMutate}
-							required
-						/>
+						<textarea type="text" defaultValue={message} placeholder="Enter comment/question" className="input input-primary border-4 h-32" id="message" onChange={onMutate} required />
 						<button className="btn btn-accent btn-large mt-5 border-accent-focus">Submit</button>
 					</>
 				)}

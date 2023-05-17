@@ -15,6 +15,7 @@ import ContactLeft from './ContactLeft';
 import HomeLeft from './HomeLeft';
 import HomeRight from './HomeRight';
 import ResumeLeft from './ResumeLeft';
+import ResumeRight from './ResumeRight';
 import Stars from '../components/Stars';
 import { auth, db } from '../firebase.config';
 import { collection, query, getDocs } from 'firebase/firestore';
@@ -62,16 +63,14 @@ function Dashboard() {
 	};
 
 	//---------------------------------------------------------------------------------------------------//
-	let rightProjectsContainer = document.querySelector('.right-container');
+	let rightProjectsContainer = document.querySelector('.right-container-home');
 
 	/**
 	 * Listens to Scrolling for the projects container
 	 * This is so I can show or hide the down arrow
 	 */
 	const onScroll = () => {
-		const atBottom =
-			Math.ceil(rightProjectsContainer.scrollTop + rightProjectsContainer.offsetHeight) ===
-			rightProjectsContainer.scrollHeight;
+		const atBottom = Math.ceil(rightProjectsContainer.scrollTop + rightProjectsContainer.offsetHeight) === rightProjectsContainer.scrollHeight;
 		if (atBottom) {
 			setProjectsScroll(true);
 		} else {
@@ -85,11 +84,7 @@ function Dashboard() {
 			<Navbar projectSelected={projectSelected} setProjectSelected={setProjectSelected} setSlider={setSlider} />
 
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
-			<div
-				className={`left-side bg-primary h-1/2 lg:h-full ${
-					projectSelected ? 'w-full lg:w-8/12 h-3/4 lg:h-full' : 'w-full lg:w-1/2'
-				}  ${slider === 1 || slider === 4 || slider === 3 ? 'h-full' : ''}`}
-			>
+			<div className={`left-side bg-primary h-1/2 lg:h-full ${projectSelected ? 'w-full lg:w-8/12 h-3/4 lg:h-full' : 'w-full lg:w-1/2'}  ${slider === 1 || slider === 4 || slider === 3 ? 'h-full' : ''}`}>
 				<div className="w-full h-screen">
 					<Stars />
 
@@ -99,14 +94,7 @@ function Dashboard() {
 						<HomeLeft slider={slider} setSlider={setSlider} />
 
 						{/* PROJECTS */}
-						<ProjectsLeft
-							projectSelected={projectSelected}
-							setProjectSelected={setProjectSelected}
-							slider={slider}
-						/>
-
-						{/* RESUME */}
-						<ResumeLeft projectSelected={projectSelected} slider={slider} />
+						<ProjectsLeft projectSelected={projectSelected} setProjectSelected={setProjectSelected} slider={slider} />
 
 						{/* CONTACT */}
 						{/* One is for mobile devices, and one is for larger screen */}
@@ -115,6 +103,15 @@ function Dashboard() {
 						</div>
 						<div className="hidden lg:block">
 							<ContactLeft slider={slider} />
+						</div>
+
+						{/* CONTACT */}
+						{/* One is for mobile devices, and one is for larger screen */}
+						<div className="block lg:hidden">
+							<ResumeRight slider={slider} />
+						</div>
+						<div className="hidden lg:block">
+							<ResumeLeft slider={slider} setSlider={setSlider} />
 						</div>
 					</div>
 				</div>
@@ -131,11 +128,7 @@ function Dashboard() {
 				{/* Navbar */}
 				{/* This is hidden if user is on mobile/smaller screen */}
 				<div className="hidden lg:block">
-					<Navbar
-						projectSelected={projectSelected}
-						setProjectSelected={setProjectSelected}
-						setSlider={setSlider}
-					/>
+					<Navbar projectSelected={projectSelected} setProjectSelected={setProjectSelected} setSlider={setSlider} />
 				</div>
 
 				{loading ? (
@@ -144,24 +137,18 @@ function Dashboard() {
 						<Spinner />
 					</div>
 				) : (
-					<div
-						className="right-container border-t-8 border-secondary-content lg:border-0"
-						onScroll={onScroll}
-					>
+					<div className="right-container border-t-8 border-secondary-content lg:border-0" onScroll={onScroll}>
 						{/* HOME */}
 						<HomeRight slider={slider} setSlider={setSlider} />
 
 						{/* PROJECTS */}
-						<ProjectsRight
-							projects={projects}
-							projectsScroll={projectsScroll}
-							projectSelected={projectSelected}
-							setProjectSelected={setProjectSelected}
-							slider={slider}
-						/>
+						<ProjectsRight projects={projects} projectsScroll={projectsScroll} projectSelected={projectSelected} setProjectSelected={setProjectSelected} slider={slider} />
 
 						{/* Contact */}
 						<ContactRight slider={slider} />
+
+						{/* RESUME */}
+						<ResumeRight slider={slider} />
 					</div>
 				)}
 			</div>

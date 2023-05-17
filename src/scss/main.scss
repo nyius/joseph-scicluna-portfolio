@@ -38,6 +38,20 @@ html {
 	background-color: hsl(var(--a) / var(--tw-bg-opacity));
 }
 
+.bg-blue {
+	background-color: #0414a7;
+}
+.text-blue {
+	color: #0414a7;
+}
+.text-white {
+	color: #fff;
+}
+
+.bg-slate-400 {
+	background-color: #a9a9a9;
+}
+
 .pixel-font {
 	font-family: 'Press Start 2P', cursive;
 }
@@ -199,7 +213,7 @@ html {
 
 				& .screen {
 					width: 100%;
-					padding: 5%;
+					padding: 3%;
 					overflow: auto;
 					box-shadow: inset 0 0 1rem 0px rgba($color: #000000, $alpha: 0.7);
 					transition: 1s ease-in-out all;
@@ -281,7 +295,7 @@ html {
 
 					&-name {
 						padding: 1% 3%;
-						margin-top: 5%;
+						margin-top: 2%;
 						box-shadow: 0.2rem 0.2rem 0px 0px rgba($color: #1b1b21, $alpha: 1);
 						transition: 1s ease-in-out all;
 					}
@@ -402,7 +416,7 @@ html {
 
 						&-project-name {
 							margin-top: 2%;
-							padding: 2% 8%;
+							padding: 5% 9%;
 							font-size: 0.875rem;
 							transition: 1s ease-in-out all;
 						}
@@ -426,7 +440,7 @@ html {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		height: 100%;
+		height: 90%;
 		margin-top: 10%;
 		align-items: center;
 		justify-content: center;
@@ -481,6 +495,19 @@ html {
 	}
 
 	&-contact {
+		position: absolute;
+		top: -1000vh;
+		left: 0;
+		transition: 1s ease-in-out top;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		font-weight: 700;
+	}
+
+	&-resume {
 		position: absolute;
 		top: -1000vh;
 		left: 0;
