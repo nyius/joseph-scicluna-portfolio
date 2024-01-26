@@ -34,6 +34,7 @@ function Admin() {
 		}
 	};
 
+	//---------------------------------------------------------------------------------------------------//
 	return (
 		<div className="flex w-full h-screen justify-center items-center">
 			<div className=" flex flex-col justify-center items-center bg-primary w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/4 h-fit p-6 sm:p10 md:p14 lg:p20 rounded-xl login-container">

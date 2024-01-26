@@ -313,6 +313,116 @@ html {
 		}
 	}
 
+	&-creative {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: 1s ease-in-out all;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		align-items: center;
+
+		//-----------------------------------------------------------
+		.tv-container {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			aspect-ratio: 1241/766;
+			border: 10px solid rgb(82 82 82 / var(--tw-bg-opacity));
+			border-radius: 7%;
+			box-shadow: 0.6rem 0.6rem 0px 0px hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
+			transition: 1s ease-in-out all;
+			z-index: 10;
+
+			& .tv-left-side {
+				width: 80%;
+				height: 100%;
+				padding: 2%;
+				border-radius: 6% 0% 0% 6%;
+
+				& .screen-container {
+					width: 100%;
+					height: 100%;
+					border-radius: 5%;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					transition: 1s ease-in-out all;
+					padding: 3%;
+
+					& .screen-container-inside {
+						width: 100%;
+						height: 100%;
+						border-radius: 20%;
+						transition: 1s ease-in-out all;
+						box-shadow: inset 0 0 1rem 0px rgba($color: #000000, $alpha: 0.7);
+					}
+				}
+			}
+
+			& .tv-right-side {
+				display: flex;
+				flex-direction: column;
+				gap: 2%;
+				width: 20%;
+				height: 100%;
+				border-radius: 0% 6% 6% 0%;
+				padding: 2%;
+
+				& .speaker {
+					display: grid;
+					grid-template-columns: repeat(auto-fill, 5%);
+					gap: 5px;
+					overflow: hidden;
+					height: 50%;
+					justify-content: center;
+					& .dot {
+						height: 0.3vw; /* Adjust the size of the dots */
+						aspect-ratio: 1/1;
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+					}
+				}
+
+				& .controls {
+					display: flex;
+					flex-direction: column;
+					gap: 5%;
+					border-radius: 8%;
+					height: 50%;
+					padding: 7% 9%;
+
+					& .knob {
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+						height: 50%;
+						padding: 10%;
+						position: relative;
+
+						& .knob-inside {
+							border-radius: 50%;
+							height: 100%;
+							width: 100%;
+							box-shadow: inset 0 0 1rem 0px rgba($color: #000000, $alpha: 0.7);
+						}
+
+						& .knob-handle {
+							position: absolute;
+							top: 50%;
+							width: 75%;
+							height: 20%;
+							border-radius: 10%;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	&-contact {
 		position: absolute;
 		top: -1000vh;
@@ -494,6 +604,66 @@ html {
 		}
 	}
 
+	&-creative {
+		position: absolute;
+		top: -1000vh;
+		left: 0;
+		transition: 1s ease-in-out top;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		font-weight: 700;
+
+		& .remote {
+			display: flex;
+			flex-direction: column;
+			gap: 5%;
+			border-radius: 5%;
+			aspect-ratio: 9/16;
+			box-shadow: 0.5rem 0.5rem 0px 0px rgba($color: #1b1b21, $alpha: 0.8);
+			padding: 5%;
+			transition: 1s ease-in-out all;
+			place-content: space-between;
+
+			& .remote-light {
+				height: 4%;
+				width: 8%;
+				border-radius: 50%;
+			}
+
+			& .remote-buttons {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+				align-self: center;
+				justify-self: center;
+				align-items: center;
+				justify-content: center;
+				gap: 4%;
+
+				& .button-group {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 30%;
+
+					& .button {
+					}
+				}
+			}
+
+			& .remote-bottom {
+				width: 100%;
+				height: 15%;
+				border-radius: 5%;
+			}
+		}
+	}
+
 	&-contact {
 		position: absolute;
 		top: -1000vh;
@@ -548,7 +718,19 @@ html {
 	}
 }
 
-// Anims
+@media (max-width: 1024px) {
+	.left-container-creative {
+		margin-top: 0%;
+		height: 50%;
+	}
+
+	.right-container-creative {
+		margin-top: 5%;
+		justify-content: start;
+	}
+}
+
+// Anims ---------------------------------------------------------------
 .upAndDown {
 	animation: upAndDown 1s ease-in-out infinite;
 }
@@ -586,5 +768,24 @@ html {
 	}
 	100% {
 		opacity: 0;
+	}
+}
+
+.powerAnim {
+	animation: powerAnimation 2s ease-in-out infinite;
+}
+
+@keyframes powerAnimation {
+	0% {
+		transform: opacity(0%);
+		box-shadow: 0rem 0rem 0px 0px rgba($color: #ff2841, $alpha: 0.75);
+	}
+	50% {
+		transform: opacity(100%);
+		box-shadow: 0rem 0rem 10px 10px rgba($color: #ffe2e6, $alpha: 0.75);
+	}
+	100% {
+		transform: opacity(0%);
+		box-shadow: 0rem 0rem 0px 0px rgba($color: #ff2841, $alpha: 0.75);
 	}
 }

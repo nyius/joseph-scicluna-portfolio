@@ -1,10 +1,7 @@
 import React from 'react';
 import DPad from '../assets/d-pad.png';
-import CircleButtonDown from '../assets/circle-button-down.png';
-import SelectButtonDown from '../assets/select-button-down.png';
 import CircleButton from '../assets/circle-button.png';
 import SelectButton from '../assets/select-button.png';
-import Arrow from '../assets/down arrow.png';
 
 function ProjectsLeft({ projectSelected, slider }) {
 	return (
@@ -15,7 +12,7 @@ function ProjectsLeft({ projectSelected, slider }) {
 				<div className="bg-zinc-400 screen-container">
 					{/* POWER LED */}
 					<div className="power-led-container">
-						<div className={`${projectSelected ? 'power-led-on' : 'power-led-off'} bg-zinc-800 rounded-full`}></div>
+						<div className={`${projectSelected ? 'power-led-on powerAnim' : 'power-led-off'} bg-zinc-800 rounded-full`}></div>
 					</div>
 
 					{/* DISPLAY */}
