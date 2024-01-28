@@ -53,7 +53,7 @@ function CreativeLeft({ artworkSelected, slider }) {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		<div className={`left-container-creative h-screen lg:h-full ${slider !== 5 ? '-z-50' : 'z-30'}`} style={slider === 5 ? { top: '0vh' } : { top: '150vh' }}>
+		<div className={`left-container-creative h-screen lg:h-full ${slider !== 5 ? '-z-50 !top-[150vh]' : 'z-30 top-0'}`}>
 			<div className="tv-container bg-[#d1a281]" style={{ width: artworkSelected ? `96%` : `75%` }}>
 				<div className="tv-left-side bg-zinc-900">
 					<div className="screen-container bg-zinc-100">
@@ -127,11 +127,11 @@ function CreativeLeft({ artworkSelected, slider }) {
 			</div>
 
 			{/* Project Text */}
-			<div className="w-full mt-[2%] px-[10%]" style={{ width: artworkSelected ? `96%` : `75%` }}>
+			<div className="w-full mt-[4%] px-[10%] mb-20" style={{ width: artworkSelected ? `96%` : `75%` }}>
 				{artworkSelected ? (
 					<>
 						<div className="text-xl 2k:text-2xl text-white font-bold">{artworkSelected.project?.name}</div>
-						<div className="text-xl 2k:text-2xl text-white mr-[5%]">{artworkSelected.project?.description}</div>
+						<div className="text-md 2k:text-xl text-white mr-[5%]">{artworkSelected.project?.description}</div>
 						<div className="flex flex-row gap-2 text-xl 2k:text-2xl text-white italic">
 							{artworkSelected.project?.technology.map((tech, i) => {
 								return (
@@ -143,7 +143,7 @@ function CreativeLeft({ artworkSelected, slider }) {
 							})}
 						</div>
 						{artworkSelected.project?.link ? (
-							<a href={artworkSelected.project?.link} target="_blank" className="text-xl 2k:text-2xl text-white mr-[5%] bg-secondary px-4 py-1 hover:bg-secondary-focus">
+							<a href={artworkSelected.project?.link} target="_blank" className="btn btn-sm btn-secondary">
 								Visit
 							</a>
 						) : (

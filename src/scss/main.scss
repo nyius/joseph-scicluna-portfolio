@@ -134,8 +134,9 @@ html {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
+		overflow: auto;
 
 		& .avatar {
 			width: 30%;
@@ -152,7 +153,6 @@ html {
 
 	&-projects {
 		position: absolute;
-		top: 0;
 		left: 0;
 		width: 100%;
 		display: flex;
@@ -282,7 +282,7 @@ html {
 			& .project-description {
 				box-shadow: 0.3rem 0.3rem 0px 0px rgba($color: #1b1b21, $alpha: 0.75);
 				transition: 1s ease-in-out all;
-				padding: 2%;
+				padding: 4%;
 			}
 
 			& .bottom-container {
@@ -324,6 +324,7 @@ html {
 		justify-content: center;
 		height: 100%;
 		align-items: center;
+		overflow: auto;
 
 		//-----------------------------------------------------------
 		.tv-container {
@@ -681,7 +682,6 @@ html {
 @media (max-width: 768px) {
 	.gameboy-container {
 		border: 5px solid rgb(82 82 82 / var(--tw-bg-opacity));
-		width: 90% !important;
 	}
 
 	.left-container-projects {
@@ -706,9 +706,13 @@ html {
 }
 
 @media (max-width: 1024px) {
+	.left-container-home {
+		justify-content: start;
+	}
 	.left-container-creative {
-		margin-top: 0%;
+		margin-top: 15%;
 		height: 50%;
+		justify-content: start;
 	}
 
 	.right-container-creative {

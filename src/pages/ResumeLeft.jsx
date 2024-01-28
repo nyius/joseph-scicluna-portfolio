@@ -6,7 +6,7 @@ function ResumeLeft({ slider, setSlider }) {
 	const navigate = useNavigate();
 
 	return (
-		<div className={`left-container-resume h-screen lg:h-full justify-center items-center ${slider !== 3 ? '-z-50' : 'z-30'}`} style={slider === 3 ? { top: '0' } : { top: '150vh' }}>
+		<div className={`left-container-resume h-screen lg:h-full justify-center items-center ${slider !== 3 ? '-z-50 !hidden' : 'z-30'}`} style={slider === 3 ? { top: '0' } : { top: '150vh' }}>
 			<div className="mb-4 lg:mb-0 pixel-font text-black items-center flex flex-col">
 				<img src={Me} alt="Me" className="rounded-full mb-4 !max-w-lg" />
 				<div className="p-4 bg-secondary border-4 border-solid border-accent-focus">
