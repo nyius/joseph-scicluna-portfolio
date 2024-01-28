@@ -155,8 +155,8 @@ html {
 		position: absolute;
 		left: 0;
 		width: 100%;
-		display: flex;
 		height: fit-content;
+		display: flex;
 		justify-content: center;
 		transition: 1s ease-in-out all;
 
@@ -315,16 +315,15 @@ html {
 
 	&-creative {
 		position: absolute;
-		top: 0;
 		left: 0;
-		transition: 1s ease-in-out all;
 		width: 100%;
+		height: fit-content;
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
-		height: 100%;
+		flex-direction: column;
 		align-items: center;
 		overflow: auto;
+		transition: 1s ease-in-out all;
 
 		//-----------------------------------------------------------
 		.tv-container {
