@@ -8,9 +8,9 @@ function CreativeRight({ artworkSelected, creativeProjects, setArtworkSelected, 
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		<div className={`right-container-creative h-screen lg:h-full ${slider !== 5 ? '-z-50' : 'z-30'}`} style={slider === 5 ? { top: '0' } : { top: '-150vh' }}>
-			<div className={`remote bg-zinc-800`} style={{ width: artworkSelected ? `90%` : `50%` }}>
-				<div className={`remote-light ${clicked === 0 || clicked ? 'bg-[#ff295e]' : 'bg-zinc-900'}  `}></div>
+		<div className={`right-container-creative h-1/2 lg:h-full ${slider !== 5 ? '-z-50' : 'z-30'}`} style={slider === 5 ? { top: '0' } : { top: '-150vh' }}>
+			<div className={`remote bg-zinc-900 border-4 border-zinc-400 border-solid`} style={{ width: artworkSelected ? `70%` : `50%` }}>
+				<div className={`remote-light ${clicked === 0 || clicked ? 'bg-[#ff295e]' : 'bg-black'}  `}></div>
 				<div className="remote-buttons">
 					{buttons.map((button, i) => {
 						return (
@@ -29,7 +29,7 @@ function CreativeRight({ artworkSelected, creativeProjects, setArtworkSelected, 
 						);
 					})}
 				</div>
-				<div className="remote-bottom bg-zinc-900"></div>
+				<div className="remote-bottom bg-zinc-800"></div>
 			</div>
 		</div>
 	);
