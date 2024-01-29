@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Resume from '../assets/Joseph_Scicluna_Resume_2023.pdf';
+import Resume from '../assets/Joseph_Scicluna_Resume_2024.pdf';
 
 function ResumeRight({ slider }) {
 	//---------------------------------------------------------------------------------------------------//
