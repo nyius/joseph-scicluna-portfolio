@@ -119,7 +119,7 @@ function Dashboard() {
 
 			{/* ------------------------------- LEFT SIDE ------------------------------- */}
 			<div
-				className={`left-side bg-primary h-1/2 lg:h-full ${projectSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : artworkSelected ? 'w-full h-3/5 lg:w-8/12' : 'w-full lg:w-1/2'}  ${
+				className={`left-side bg-primary h-1/2 lg:h-full ${projectSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : artworkSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : 'w-full lg:w-1/2'}  ${
 					slider === 1 || slider === 4 || slider === 3 ? '!h-full' : ''
 				}`}
 			>
