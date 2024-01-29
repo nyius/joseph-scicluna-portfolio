@@ -22,7 +22,7 @@ function ImageLightbox({ artworkSelected }) {
 					</label>
 					<img
 						src={ButtonLeft}
-						className="absolute top-1/2 left-[5%] h-14 cursor-pointer shadow-lg"
+						className="absolute top-1/2 left-[5%] h-8 lg:h-14 cursor-pointer shadow-lg"
 						onClick={() => {
 							setCurrentSlide(prevState => {
 								if (prevState === 0) {
@@ -35,7 +35,7 @@ function ImageLightbox({ artworkSelected }) {
 					/>
 					<img
 						src={ButtonRight}
-						className="absolute top-1/2 right-[5%] h-14 cursor-pointer shadow-lg"
+						className="absolute top-1/2 right-[5%] h-8 lg:h-14 cursor-pointer shadow-lg"
 						onClick={() => {
 							setCurrentSlide(prevState => {
 								if (prevState === artworkSelected?.project?.images?.length - 1) {

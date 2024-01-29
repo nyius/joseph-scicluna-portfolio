@@ -54,14 +54,18 @@ function CreativeLeft({ artworkSelected, slider }) {
 
 	//---------------------------------------------------------------------------------------------------//
 	return (
-		<div className={`left-container-creative h-screen lg:h-full ${slider !== 5 ? '-z-50 !top-[150vh]' : 'z-30 top-0'}`}>
+		<div className={`left-container-creative h-screen lg:h-full ${slider !== 5 ? '-z-50 !top-[150vh]' : 'z-30 top-0 lg:top-[10vh]'}`}>
 			<div className="tv-container bg-[#d1a281]" style={{ width: artworkSelected ? `96%` : `75%` }}>
 				<div className="tv-left-side bg-zinc-900">
 					<div className="screen-container bg-zinc-100">
 						<div className="screen-container-inside overflow-hidden bg-[#070707]">
 							{artworkSelected ? (
 								<div className="h-full w-full flex flex-col items-center justify-center ">
-									<div className={`h-[150%] w-full bg-cover bg-no-repeat bg-center relative`} style={{ backgroundImage: `url('${changing ? Static : artworkSelected?.project?.images[currentSlide]}')` }}>
+									<label
+										htmlFor="image-lightbox"
+										className={`h-[150%] cursor-pointer w-full bg-cover bg-no-repeat bg-center relative`}
+										style={{ backgroundImage: `url('${changing ? Static : artworkSelected?.project?.images[currentSlide]}')` }}
+									>
 										<div className="absolute w-[30%] bottom-[2%] left-1/2 -translate-x-1/2  h-[5%]">
 											<div className="grid grid-cols-10 w-full">
 												{slideTimer.map(timer => {
@@ -69,7 +73,7 @@ function CreativeLeft({ artworkSelected, slider }) {
 												})}
 											</div>
 										</div>
-									</div>
+									</label>
 								</div>
 							) : (
 								<div className={`h-[150%] w-full bg-cover bg-no-repeat bg-center relative`} style={{ backgroundImage: `url('${Static}')` }}></div>
