@@ -53,9 +53,9 @@ function ProjectsLeft({ projectSelected, slider }) {
 								</div>
 							</div>
 						) : (
-							<div className="h-full w-full pixel-font p-2 text-primary text-sm lg:text-lg">
-								<p className="h-4 w-full">
-									Insert Cartridge to Continue... <span className="blinkLine">|</span>
+							<div className="h-full w-full pixel-font p-2 text-primary">
+								<p className="h-4 w-full text-[50%] lg:text-lg">
+									Insert Cartridge to Continue.. <span className="blinkLine">|</span>
 								</p>
 							</div>
 						)}

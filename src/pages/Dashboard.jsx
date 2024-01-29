@@ -145,7 +145,7 @@ function Dashboard() {
 
 				{/* ------------------------------- LEFT SIDE ------------------------------- */}
 				<div
-					className={`left-side bg-primary h-1/2 lg:h-full ${projectSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : artworkSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : 'w-full lg:w-1/2'}  ${
+					className={`left-side bg-primary h-1/2 lg:h-full ${projectSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : artworkSelected ? 'w-full lg:w-8/12 h-3/5 lg:h-full' : slider === 3 ? 'w-full lg:w-1/3' : 'w-full lg:w-1/2'}  ${
 						slider === 1 || slider === 4 || slider === 3 ? '!h-full' : ''
 					}`}
 				>
@@ -187,7 +187,7 @@ function Dashboard() {
 
 				{/* ------------------------------- RIGHT SIDE ------------------------------- */}
 				<div
-					className={`right-side bg-secondary ${slider === 1 ? 'hidden lg:block' : ''} ${projectSelected ? `w-full lg:w-4/12` : artworkSelected ? 'w-full lg:w-4/12' : `w-full lg:w-1/2`}`}
+					className={`right-side bg-secondary ${slider === 1 ? 'hidden lg:block' : ''} ${projectSelected ? `w-full lg:w-4/12` : artworkSelected ? 'w-full lg:w-4/12' : slider === 3 ? 'w-2/3' : `w-full lg:w-1/2`}`}
 					onClick={e => {
 						selectProject(e);
 						selectArtwork(e);
