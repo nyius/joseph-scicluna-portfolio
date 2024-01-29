@@ -16,6 +16,7 @@ import { auth, db } from '../firebase.config';
 import { collection, query, getDocs } from 'firebase/firestore';
 import CreativeRight from './CreativeRight';
 import ImageLightbox from '../components/ImageLightbox';
+import { useLocation } from 'react-router-dom';
 
 function Dashboard() {
 	const [loading, setLoading] = useState(true);
@@ -25,6 +26,7 @@ function Dashboard() {
 	const [artworkSelected, setArtworkSelected] = useState(false);
 	const [projectsScroll, setProjectsScroll] = useState(false);
 	const [slider, setSlider] = useState(1);
+	const location = useLocation().hash;
 
 	// Get projects ---------------------------------------------------------------------------------------------------//
 	useEffect(() => {
@@ -51,6 +53,7 @@ function Dashboard() {
 		fetchProjects();
 	}, []);
 
+	// Get creative projects
 	useEffect(() => {
 		const fetchCreativeProjects = async () => {
 			try {
@@ -75,6 +78,27 @@ function Dashboard() {
 		};
 
 		fetchCreativeProjects();
+	}, []);
+
+	// set tab on page load  ---------------------------------------------------------------------------------------------------//
+	useEffect(() => {
+		switch (location) {
+			case '#projects':
+				setSlider(2);
+				return;
+			case '#resume':
+				setSlider(3);
+				return;
+			case '#contact':
+				setSlider(4);
+				return;
+			case '#creative':
+				setSlider(5);
+				return;
+			default:
+				setSlider(1);
+				return;
+		}
 	}, []);
 
 	/**
