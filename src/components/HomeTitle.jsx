@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function HomeTitle({ setSlider }) {
 	const navigate = useNavigate();
 	const devSkills = [`react`, `Vanilla JS`, `Node.JS`, `MongoDB`, `Express`, `Dynamic Web Apps`, `Tailwind`, `DaisyUI`, `SCSS`, `Jest`, `Figma`, `Algolia`, `Firebase Cloud DB`, `Firebase Cloud Functions`, `Amazon S3`, `Overwolf`, `Chrome`];
-	const creativeSkills = [`Photoshop`, `Illustrator`, `InDesign`, `Modo`, `Blender`, `Substance`, `UE5`, `Unity`];
+	const creativeSkills = [`Photoshop`, `Figma`, `Illustrator`, `InDesign`, `Modo`, `Blender`, `Substance`, `UE5`, `Unity`];
 
 	return (
 		<>
