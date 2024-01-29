@@ -4,6 +4,7 @@ import Static from '../assets/static.gif';
 import { useState } from 'react';
 import ButtonLeft from '../assets/tv-button-left.png';
 import ButtonRight from '../assets/tv-button-right.png';
+import ButtonFs from '../assets/tv-button-fs.png';
 import KnobBg from '../assets/tv-knob.png';
 import KnobHandle from '../assets/tv-knob-handle.png';
 
@@ -90,6 +91,10 @@ function CreativeLeft({ artworkSelected, slider }) {
 							<img src={KnobBg} alt="" />
 							<img src={KnobHandle} className="knob-handle" style={{ transform: `rotate(${artworkSelected ? `${Number(artworkSelected.project.order) + 1}0deg` : '45deg'})` }}></img>
 						</div>
+
+						<label htmlFor="image-lightbox" className="w-full flex items-center justify-center">
+							<img src={ButtonFs} className="w-[40%] cursor-pointer" />
+						</label>
 
 						<div className="grid grid-cols-2 items-center justify-center">
 							<img

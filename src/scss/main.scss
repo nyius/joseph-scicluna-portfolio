@@ -319,8 +319,8 @@ html {
 		width: 100%;
 		height: fit-content;
 		display: flex;
-		justify-content: center;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 		overflow: auto;
 		transition: 1s ease-in-out all;
@@ -329,8 +329,7 @@ html {
 		.tv-container {
 			position: relative;
 			display: flex;
-			flex-direction: row;
-			aspect-ratio: 1241/766;
+			aspect-ratio: 1241/766 !important;
 			border: 10px solid rgb(82 82 82 / var(--tw-bg-opacity));
 			border-radius: 7%;
 			box-shadow: 0.6rem 0.6rem 0px 0px hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
@@ -395,6 +394,9 @@ html {
 					border-radius: 8%;
 					height: 50%;
 					padding: 7% 9%;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
 
 					& .knob {
 						position: relative;
