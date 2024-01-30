@@ -55,7 +55,7 @@ function CreativeLeft({ artworkSelected, slider }) {
 	//---------------------------------------------------------------------------------------------------//
 	return (
 		<div className={`left-container-creative h-screen lg:h-full ${slider !== 5 ? '-z-50 !top-[150vh]' : 'z-30 top-0 lg:top-[10vh]'}`}>
-			<div className="tv-container bg-[#d1a281]" style={{ width: artworkSelected ? `96%` : `75%` }}>
+			<div className={`tv-container bg-[#d1a281] ${artworkSelected ? `w-[40rem] h-[26rem] xl:w-[60rem] xl:h-[40rem] 2k:w-[80rem] 2k:h-[50rem]` : `w-[40rem] h-[26rem] xl:w-[40rem] xl:h-[26rem] 2k:w-[60rem] 2k:h-[40rem]`}`}>
 				<div className="tv-left-side bg-zinc-900">
 					<div className="screen-container bg-zinc-100">
 						<div className="screen-container-inside overflow-hidden bg-[#070707]">

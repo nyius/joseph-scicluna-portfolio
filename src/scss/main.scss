@@ -338,7 +338,6 @@ html {
 
 			& .tv-left-side {
 				width: 80%;
-				height: 100%;
 				padding: 2%;
 				border-radius: 6% 0% 0% 6%;
 
@@ -368,7 +367,6 @@ html {
 				flex-direction: column;
 				gap: 2%;
 				width: 20%;
-				height: 100%;
 				border-radius: 0% 6% 6% 0%;
 				padding: 2%;
 
@@ -379,6 +377,7 @@ html {
 					overflow: hidden;
 					height: 50%;
 					justify-content: center;
+
 					& .dot {
 						height: 0.3vw; /* Adjust the size of the dots */
 						aspect-ratio: 1/1;

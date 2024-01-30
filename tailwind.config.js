@@ -1,7 +1,14 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,jsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+				'2k': '1921px',
+				'4k': '2561px',
+				'5k': '3500px',
+			},
+		},
+
 		colors: {
 			zinc: {
 				100: '#d4d4d4',
